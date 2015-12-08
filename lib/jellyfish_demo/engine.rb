@@ -4,42 +4,35 @@ module JellyfishDemo
 
     config.generators do |g|
       g.test_framework :rspec, fixture: false
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.assets false
+      g.helper false
     end
 
-    initializer 'jellyfish_demo.load_generic_dataset', :before => :load_config_initializers do
-      begin
-        if ::Projects.table_exists?
-          Dir[File.expand_path '../../../db/data/sample/projects.yml', __FILE__].each do |file|
-            require_dependency file
-          end
+    initializer :append_migrations do |app|
+      unless app.root.to_s.match root.to_s
+        config.paths['db/migrate'].expanded.each do |expanded_path|
+          app.config.paths['db/migrate'] << expanded_path
         end
-      rescue
-        # ignored
-        nil
       end
     end
-    #
-    # initializer 'jellyfish_azure.load_product_types', :before => :load_config_initializers do
-    #   begin
-    #     if ::ProductType.table_exists?
-    #       Dir[File.expand_path '../../../app/models/jellyfish_azure/product_type/*.rb', __FILE__].each do |file|
-    #         require_dependency file
-    #       end
-    #     end
-    #   rescue
-    #     # ignored
-    #     nil
-    #   end
-    # end
-    #
-    # initializer 'jellyfish_azure.register_extension', :after => :finisher_hook do ||
-    #   ::Jellyfish::Extension.register 'jellyfish-azure' do
-    #     requires_jellyfish '>= 4.0.0'
-    #
-    #     load_scripts 'extensions/azure/components/forms/fields.config.js',
-    #                  'extensions/azure/resources/azure-data.factory.js'
-    #
-    #     mount_extension JellyfishAzure::Engine, at: :azure
-    #   end
+
+    # Initializer to combine this engines static assets with the static assets of the hosting site.
+    initializer 'static assets' do |app|
+      app.middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public")
+    end
+
+    initializer 'jellyfish_demo.register_extension', :after => :finisher_hook do |app|
+      Jellyfish::Extension.register 'jellyfish-demo' do
+        requires_jellyfish '>= 4.0.0'
+
+        # load_scripts 'extensions/aws/components/forms/fields.config.js',
+        #              'extensions/aws/resources/aws-data.factory.js',
+        #              'extensions/aws/states/services/details/aws/ec2/ec2.state.js'
+
+        mount_extension JellyfishDemo::Engine, at: :demo
+      end
+    end
+
   end
 end
