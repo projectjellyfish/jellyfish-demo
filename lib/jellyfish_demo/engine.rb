@@ -25,11 +25,6 @@ module JellyfishDemo
     initializer 'jellyfish_demo.register_extension', :after => :finisher_hook do |app|
       Jellyfish::Extension.register 'jellyfish-demo' do
         requires_jellyfish '>= 4.0.0'
-
-        # load_scripts 'extensions/aws/components/forms/fields.config.js',
-        #              'extensions/aws/resources/aws-data.factory.js',
-        #              'extensions/aws/states/services/details/aws/ec2/ec2.state.js'
-
         mount_extension JellyfishDemo::Engine, at: :demo
       end
     end
