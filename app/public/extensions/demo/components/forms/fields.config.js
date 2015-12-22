@@ -24,7 +24,7 @@
             }
         });
 
-        Forms.fields('aws_rds_engines', {
+        Forms.fields('demo_rds_engines', {
             type: 'async_select',
             templateOptions: {
                 label: 'Engine',
@@ -36,7 +36,7 @@
             controller: DemoDataController
         });
 
-        Forms.fields('aws_rds_versions', {
+        Forms.fields('demo_rds_versions', {
             type: 'async_select',
             templateOptions: {
                 label: 'Version',
@@ -48,7 +48,7 @@
             controller: DemoDataController
         });
 
-        Forms.fields('aws_rds_flavors', {
+        Forms.fields('demo_rds_flavors', {
             type: 'async_select',
             templateOptions: {
                 label: 'Instance Type',
@@ -60,7 +60,7 @@
             controller: DemoDataController
         });
 
-        Forms.fields('aws_rds_admin_username', {
+        Forms.fields('demo_rds_admin_username', {
             type: 'text',
             templateOptions: {
                 label: 'Admin Username'
@@ -90,7 +90,7 @@
             }
         });
 
-        Forms.fields('aws_rds_admin_password', {
+        Forms.fields('demo_rds_admin_password', {
             type: 'password',
             templateOptions: {
                 label: 'Admin Password'
@@ -125,7 +125,7 @@
             controller: DemoDataController
         });
 
-        Forms.fields('aws_vpcs', {
+        Forms.fields('demo_vpcs', {
             type: 'async_select',
             templateOptions: {
                 label: 'VPC',
@@ -149,7 +149,7 @@
             controller: DemoDataController
         });
 
-        Forms.fields('aws_zones', {
+        Forms.fields('demo_zones', {
             type: 'async_select',
             templateOptions: {
                 label: 'Availability Zone',

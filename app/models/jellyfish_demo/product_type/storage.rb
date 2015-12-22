@@ -1,13 +1,13 @@
 
 module JellyfishDemo
   module ProductType
-    class Server < ::ProductType
+    class Storage < ::ProductType
       def self.load_product_types
         return unless super
         transaction do
           [
             set('Demo Storage', 'ec795ba0-b090-4f63-bdd6-13c7063d999d', description: 'Demo Storage Product Type')
-          ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Server') }
+          ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Storage', provider_type: 'JellyfishDemo::Provider::Demo') }
         end
       end
     end
@@ -17,7 +17,7 @@ module JellyfishDemo
     end
 
     def tags
-      ['demo', 'server']
+      ['demo', 'storage']
     end
 
     def product_questions

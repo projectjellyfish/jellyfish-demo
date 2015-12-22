@@ -51,6 +51,12 @@ module JellyfishDemo
     initializer 'jellyfish_demo.register_extension', after: :finisher_hook do |app|
       Jellyfish::Extension.register 'jellyfish-demo' do
         requires_jellyfish '>= 4.0.0'
+
+        load_scripts 'extensions/demo/components/forms/fields.config.js',
+                     'extensions/demo/resources/demo-data.factory.js',
+                     'extensions/demo/states/services/details/demo/storage/storage.state.js',
+                     'extensions/demo/states/services/details/demo/application/application.state.js'
+
         mount_extension JellyfishDemo::Engine, at: :demo
       end
     end

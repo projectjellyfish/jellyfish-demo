@@ -6,7 +6,7 @@
 
     /** @ngInject */
     function DemoDataFactory($resource) {
-        var base = '/api/v1/aws/providers/:id/:action';
+        var base = '/api/v1/demo/providers/:id/:action';
         var DemoData = $resource(base, {action: '@action', id: '@id'});
 
         DemoData.serverFlavors = serverFlavors;

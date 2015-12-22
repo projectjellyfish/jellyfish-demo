@@ -566,7 +566,7 @@
   name: LAMP Stack
   description: A server running Linux, Apache, MySQL, and PHP.
   img: products/php.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -602,7 +602,7 @@
   name: Rails Stack
   description: A server running Linux, Apache, Postgresql, and Ruby.
   img: products/rails.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -641,7 +641,7 @@
   name: MEAN Stack
   description: A server running Linux, Apache, MongoDB, and Node.Js
   img: products/mean.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -681,7 +681,7 @@
   name: NCI Stack
   description: A server running Windows 2008, IIS, MS-SQL, Ant Hill Pro
   img: products/windows.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -715,7 +715,7 @@
   name: Drupal CMS Stack - Basic ACQUIA
   description: A server running CentOS, Drupal, MySQL and managed by Acquia.
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 0.00
@@ -748,7 +748,7 @@
   name: Drupal CMS Stack - Basic AWS
   description: An EC2 instance running CentOS, Drupal, MySQL
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 0.00
@@ -784,7 +784,7 @@
   name: Drupal CMS Stack - Basic On-Site
   description: An onsite instance running CentOS, Drupal, MySQL
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 0.00
@@ -820,7 +820,7 @@
   name: Drupal CMS Stack - High Availability AWS
   description: An EC2 instance running CentOS, Drupal, MySQL
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 0.00
@@ -860,7 +860,7 @@
   name: Indexing Stack
   description: A server running CentOS, Elasticsearch, Apache Nutch
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -894,7 +894,7 @@
   name: Data Analysis Stack
   description: A server running CentOS, Java 8, R statistical software, Python, MongoDB
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -927,7 +927,7 @@
   name: Data Analysis Stack
   description: An EC2 instance running CentOS, Java 8, R statistical software, Python, MongoDB
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -964,7 +964,7 @@
   name: NBIA Server Stack
   description: A server running  CentOS 6.5, JBOSS 5.1, NBIA version 6.2, MySQL 5.1, Java 1.6.0 update 33
   img: products/centos.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -1000,7 +1000,7 @@
   name: JIRA
   description: An installation of JIRA Project management software
   img: products/jira.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -1030,7 +1030,7 @@
   name: Confluence
   description: An installation of Confluence wiki software
   img: products/confluence.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -1060,7 +1060,7 @@
   name: Bugzilla
   description: An installation of Bugzilla bug tracking software
   img: products/bugzilla.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 20.99
@@ -1090,7 +1090,7 @@
   name: Apache Web Server
   description: An installation of Apache with PHP support
   img: products/jira.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 0.00
@@ -1120,7 +1120,7 @@
   name: MS Exchange Server
   description: An installation of Microsoft Exchange Server
   img: products/exchange.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
+  product_type: a7944ce9-754e-43a6-a1a1-78d5488fd464
   provider: demo
   active: true
   setup_price: 30.00
