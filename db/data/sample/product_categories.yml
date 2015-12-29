@@ -6,7 +6,7 @@
 - _assoc: storage
   name: Storage
   description: Media and CDN delivery
-  tag_list: [storage, cdn]
+  tag_list: [storage]
 - _assoc: database
   name: Database
   description: Databases
@@ -15,10 +15,10 @@
   name: Clustered Architecture
   description: Multi-node computing architecture
   tag_list: [cluster]
-- _assoc: application
+- _assoc: software
   name: Application
   description: Applications
-  tag_list: [application]
+  tag_list: [software]
 - _assoc: stacks
   name: Application Stacks
   description: Two or more services brought together

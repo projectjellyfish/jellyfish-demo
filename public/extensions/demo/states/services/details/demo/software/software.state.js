@@ -7,9 +7,9 @@
     /** @ngInject */
     function appRun(StateOverride) {
         StateOverride.override('services.details', function(service) {
-            if ('JellyfishDemo::Service::RDS' == service.type) {
+            if ('JellyfishDemo::Service::Software' == service.type) {
                 return {
-                    templateUrl: 'extensions/demo/states/services/details/demo/rds/rds.html',
+                    templateUrl: 'extensions/demo/states/services/details/demo/software/software.html',
                     controller: StateController
                 };
             }
@@ -19,6 +19,7 @@
     /** @ngInject */
     function StateController(service, DemoData) {
         var vm = this;
+        console.log(vm)
 
         vm.title = '';
         vm.service = service;

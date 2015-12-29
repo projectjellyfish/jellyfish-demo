@@ -7,10 +7,9 @@
     /** @ngInject */
     function appRun(StateOverride) {
         StateOverride.override('services.details', function(service) {
-            if ('JellyfishDemo::Service::Application' == service.type) {
-                console.log('Testing Testing 123')
+            if ('JellyfishDemo::Service::Storage' == service.type) {
                 return {
-                    templateUrl: 'extensions/demo/states/services/details/demo/application/application.html',
+                    templateUrl: 'extensions/demo/states/services/details/demo/storage/storage.html',
                     controller: StateController
                 };
             }

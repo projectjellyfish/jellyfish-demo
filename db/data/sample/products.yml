@@ -554,14 +554,14 @@
       value: 15 minutes
       value_type: string
 ## Applications
-#{ name: 'LAMP Stack', description: 'Linux, Apache, MySQL, PHP', active: true, img: 'products/php.png', deleted_at: nil, product_type: 'Platforms', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(application stack aws production linux apache php lamp) },
-#{ name: 'Rails Stack', description: 'Ruby on Rails Stack', active: true, img: 'products/rails.png', deleted_at: nil, product_type: 'Platforms', setup_price: '10.0', hourly_price: '3.0', monthly_price: '5.0', tag_list: %w(application stack aws production ruby rails) },
-#{ name: 'MEAN Stack', description: 'MongoDB, ExpressJS, AngularJS, NodeJS.', active: true, img: 'products/mean.png', deleted_at: nil, product_type: 'Platforms', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(application stack aws production mongodb express angularjs nodejs mean) },
-#{ name: 'JIRA Project', description: 'A project in corporate JIRA instance.', active: true, img: 'products/jira.png', deleted_at: nil, product_type: 'Applications', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(application aws production jira tracker ticket bug issue) },
-#{ name: 'Confluence Project', description: 'Confluence Project', active: true, img: 'products/confluence.png', deleted_at: nil, product_type: 'Applications', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(application aws production confluence wiki) },
-#{ name: 'Bugzilla Instance', description: 'Bugzilla Instance', active: true, img: 'products/bugzilla.png', deleted_at: nil, product_type: 'Applications', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(application aws production bugzilla tracker ticket bug issue oss) },
-#{ name: 'Apache Web Server', description: 'Apache Web Server', active: true, img: 'products/apache.png', deleted_at: nil, product_type: 'Infrastructure', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(application server aws production apache web oss) },
-#{ name: 'MS Exchange Server', description: 'MS Exchange Server', active: true, img: 'products/exchange.png', deleted_at: nil, product_type: 'Platforms', setup_price: '0.0', hourly_price: '3.5', monthly_price: '5.0', tag_list: %w(application server aws production exchange email mail windows windows-2012) },
+#{ name: 'LAMP Stack', description: 'Linux, Apache, MySQL, PHP', active: true, img: 'products/php.png', deleted_at: nil, product_type: 'Platforms', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(software stack aws production linux apache php lamp) },
+#{ name: 'Rails Stack', description: 'Ruby on Rails Stack', active: true, img: 'products/rails.png', deleted_at: nil, product_type: 'Platforms', setup_price: '10.0', hourly_price: '3.0', monthly_price: '5.0', tag_list: %w(software stack aws production ruby rails) },
+#{ name: 'MEAN Stack', description: 'MongoDB, ExpressJS, AngularJS, NodeJS.', active: true, img: 'products/mean.png', deleted_at: nil, product_type: 'Platforms', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(software stack aws production mongodb express angularjs nodejs mean) },
+#{ name: 'JIRA Project', description: 'A project in corporate JIRA instance.', active: true, img: 'products/jira.png', deleted_at: nil, product_type: 'Applications', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(software aws production jira tracker ticket bug issue) },
+#{ name: 'Confluence Project', description: 'Confluence Project', active: true, img: 'products/confluence.png', deleted_at: nil, product_type: 'Applications', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(software aws production confluence wiki) },
+#{ name: 'Bugzilla Instance', description: 'Bugzilla Instance', active: true, img: 'products/bugzilla.png', deleted_at: nil, product_type: 'Applications', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(software aws production bugzilla tracker ticket bug issue oss) },
+#{ name: 'Apache Web Server', description: 'Apache Web Server', active: true, img: 'products/apache.png', deleted_at: nil, product_type: 'Infrastructure', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(software server aws production apache web oss) },
+#{ name: 'MS Exchange Server', description: 'MS Exchange Server', active: true, img: 'products/exchange.png', deleted_at: nil, product_type: 'Platforms', setup_price: '0.0', hourly_price: '3.5', monthly_price: '5.0', tag_list: %w(software server aws production exchange email mail windows windows-2012) },
 - _assoc: app_lamp
   name: LAMP Stack
   description: A server running Linux, Apache, MySQL, and PHP.
@@ -572,7 +572,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, aws, public, app, stack, lamp, oss, php, mysql, development]
+  tag_list: [software, aws, public, app, stack, lamp, oss, php, mysql, development]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -608,7 +608,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, aws, public, app, stack, oss, rails, ruby, postgresql, development]
+  tag_list: [software, aws, public, app, stack, oss, rails, ruby, postgresql, development]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -647,7 +647,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, aws, public, app, stack, oss, mean, mongo, node, development]
+  tag_list: [software, aws, public, app, stack, oss, mean, mongo, node, development]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -687,7 +687,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, windows, iis, sqlserver, anthill, production]
+  tag_list: [software, private, vmware, nci, stack, windows, iis, sqlserver, anthill, production]
   answers:
     - name: operating_system
       value: Windows 2012
@@ -701,7 +701,7 @@
     - name: web_server
       value: IIS
       value_type: string
-    - name: application
+    - name: software
       value: Any Hill Pro
       value_type: string
     - name: database
@@ -721,7 +721,7 @@
   setup_price: 0.00
   monthly_price: 231.00
   hourly_price: 0.00
-  tag_list: [application , private , vmware , nci , stack , centos , drupal , mysql , production , ACQUIA , cms]
+  tag_list: [software , private , vmware , nci , stack , centos , drupal , mysql , production , ACQUIA , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -754,7 +754,7 @@
   setup_price: 0.00
   monthly_price: 0.00
   hourly_price: 0.24
-  tag_list: [application , public , aws , nci , stack , centos , drupal , mysql , production , cms]
+  tag_list: [software , public , aws , nci , stack , centos , drupal , mysql , production , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -790,7 +790,7 @@
   setup_price: 0.00
   monthly_price: 0.00
   hourly_price: 0.00
-  tag_list: [application , public , aws , nci , stack , centos , drupal , mysql , production , cms]
+  tag_list: [software , public , aws , nci , stack , centos , drupal , mysql , production , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -826,7 +826,7 @@
   setup_price: 0.00
   monthly_price: 625.00
   hourly_price: 0.00
-  tag_list: [application , public , aws , nci , stack , centos , drupal , mysql , production , cms]
+  tag_list: [software , public , aws , nci , stack , centos , drupal , mysql , production , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -866,7 +866,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, oss, centos, elasticsearch, nutch, production]
+  tag_list: [software, private, vmware, nci, stack, oss, centos, elasticsearch, nutch, production]
   answers:
     - name: operating_system
       value: CentOS
@@ -883,7 +883,7 @@
     - name: search_engine
       value: Elasticsearch
       value_type: string
-    - name: application
+    - name: software
       value: Apache Nutch
       value_type: string
     - name: time_to_deploy
@@ -900,7 +900,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, oss, centos, r, python, mongodb, java, production]
+  tag_list: [software, private, vmware, nci, stack, oss, centos, r, python, mongodb, java, production]
   answers:
     - name: operating_system
       value: CentOS
@@ -933,7 +933,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, public, aws, nci, stack, oss, centos, r, python, mongodb, java, production]
+  tag_list: [software, public, aws, nci, stack, oss, centos, r, python, mongodb, java, production]
   answers:
     - name: operating_system
       value: CentOS
@@ -970,7 +970,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, oss, centos, jboss, nbia, mysql, java, production]
+  tag_list: [software, private, vmware, nci, stack, oss, centos, jboss, nbia, mysql, java, production]
   answers:
     - name: operating_system
       value: CentOS
@@ -987,7 +987,7 @@
     - name: java
       value: Java 1.6.0 update 33
       value_type: string
-    - name: application
+    - name: software
       value: NBIA 6.2
       value_type: string
     - name: database
@@ -1006,7 +1006,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, app, jira, atlassian, production]
+  tag_list: [software, app, jira, atlassian, production]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -1020,7 +1020,7 @@
     - name: memory
       value: 8
       value_type: string
-    - name: application
+    - name: software
       value: Jira
       value_type: string
     - name: time_to_deploy
@@ -1036,7 +1036,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, app, confluence, atlassian, production]
+  tag_list: [software, app, confluence, atlassian, production]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -1050,7 +1050,7 @@
     - name: memory
       value: 8
       value_type: string
-    - name: application
+    - name: software
       value: Confluence
       value_type: string
     - name: time_to_deploy
@@ -1066,7 +1066,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, app, oss, bugzilla, tracker, production]
+  tag_list: [software, app, oss, bugzilla, tracker, production]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -1080,7 +1080,7 @@
     - name: memory
       value: 4
       value_type: string
-    - name: application
+    - name: software
       value: Bugzilla
       value_type: string
     - name: time_to_deploy
@@ -1096,7 +1096,7 @@
   setup_price: 0.00
   monthly_price: 0.00
   hourly_price: 3.50
-  tag_list: [application, app, apache, web, oss]
+  tag_list: [software, app, apache, web, oss]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -1126,7 +1126,7 @@
   setup_price: 30.00
   monthly_price: 13.00
   hourly_price: 0.00
-  tag_list: [application, azure, public, app, exchange, mail]
+  tag_list: [software, azure, public, app, exchange, mail]
   answers:
     - name: operating_system
       value: Windows 2012 R2
@@ -1140,7 +1140,7 @@
     - name: memory
       value: 7
       value_type: string
-    - name: application
+    - name: software
       value: Exchange Server 2016
       value_type: string
     - name: time_to_deploy

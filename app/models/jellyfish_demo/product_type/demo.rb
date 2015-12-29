@@ -22,12 +22,12 @@ module JellyfishDemo
 
     def product_questions
       [
+
       ]
     end
 
-    def order_questions
-      [
-      ]
+    def service_class
+      'JellyfishDemo::Service::Demo'.constantize
     end
   end
 end

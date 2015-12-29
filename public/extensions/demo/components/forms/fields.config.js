@@ -24,40 +24,18 @@
             }
         });
 
-        Forms.fields('demo_rds_engines', {
-            type: 'async_select',
-            templateOptions: {
-                label: 'Engine',
-                options: []
-            },
-            data: {
-                action: 'rdsEngines'
-            },
-            controller: DemoDataController
-        });
-
-        Forms.fields('demo_rds_versions', {
-            type: 'async_select',
-            templateOptions: {
-                label: 'Version',
-                options: []
-            },
-            data: {
-                action: 'rdsVersions'
-            },
-            controller: DemoDataController
-        });
-
-        Forms.fields('demo_rds_flavors', {
-            type: 'async_select',
+        Forms.fields('demo_storage_flavors', {
+            type: 'select',
             templateOptions: {
                 label: 'Instance Type',
-                options: []
-            },
-            data: {
-                action: 'rdsFlavors'
-            },
-            controller: DemoDataController
+                options: [
+                    {label: "High I/O Instance - i2.xlarge", value: "i2.xlarge"},
+                    {label: "High I/O Instance  - i2.2xlarge", value: "i2.2xlarge"},
+                    {label: "High I/O Instance - i2.4xlarge", value: "i2.4xlarge"},
+                    {label: "Dense Storage Instance - d2.xlarge", value: "d2.xlarge"},
+                    {label: "Dense Storage Instance - d2.2xlarge", value: "d2.2xlarge"}
+                ]
+            }
         });
 
         Forms.fields('demo_rds_admin_username', {
@@ -138,15 +116,39 @@
         });
 
         Forms.fields('demo_subnets', {
-            type: 'async_select',
+            type: 'select',
             templateOptions: {
                 label: 'Subnet',
-                options: []
-            },
-            data: {
-                action: 'subnets'
-            },
-            controller: DemoDataController
+                options: [{
+                    cidr: "172.31.32.0/20",
+                    id: "subnet-7632b14b",
+                    label: "subnet-7632b14b (172.31.32.0/20)",
+                    name: "172.31.32.0/20",
+                    value: "subnet-7632b14b",
+                    vpc_id: "vpc-0db5d369"
+                },{
+                    cidr: "172.31.48.0/20",
+                    id: "subnet-6ab35740",
+                    label: "subnet-6ab35740 (172.31.48.0/20)",
+                    name: "172.31.48.0/20",
+                    value: "subnet-6ab35740",
+                    vpc_id: "vpc-0db5d369"
+                }, {
+                    cidr: "172.31.0.0/20",
+                    id: "subnet-7981510f",
+                    label: "subnet-7981510f (172.31.0.0/20)",
+                    name: "172.31.0.0/20",
+                    value: "subnet-7981510f",
+                    vpc_id: "vpc-0db5d369"
+                }, {
+                    cidr: "172.31.16.0/20",
+                    id: "subnet-82d63dda",
+                    label: "subnet-82d63dda (172.31.16.0/20)",
+                    name: "172.31.16.0/20",
+                    value: "subnet-82d63dda",
+                    vpc_id: "vpc-0db5d369"
+                }]
+            }
         });
 
         Forms.fields('demo_zones', {

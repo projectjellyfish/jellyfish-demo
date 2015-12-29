@@ -9,13 +9,10 @@
         var base = '/api/v1/demo/providers/:id/:action';
         var DemoData = $resource(base, {action: '@action', id: '@id'});
 
-        DemoData.serverFlavors = serverFlavors;
-        DemoData.rdsEngines = rdsEngines;
         DemoData.rdsVersions = rdsVersions;
         DemoData.rdsFlavors = rdsFlavors;
         DemoData.ec2Images = ec2Images;
         DemoData.vpcs = vpcs;
-        DemoData.subnets = subnets;
         DemoData.zones = zones;
         DemoData.keyNames = keyNames;
         DemoData.securityGroups = securityGroups;
@@ -25,10 +22,6 @@
 
         function ec2Flavors(id) {
             return DemoData.query({id: id, action: 'ec2_flavors'}).$promise;
-        }
-
-        function rdsEngines(id) {
-            return DemoData.query({id: id, action: 'rds_engines'}).$promise;
         }
 
         function rdsVersions(id, engine) {
@@ -47,9 +40,6 @@
             return DemoData.query({id: id, action: 'vpcs'}).$promise;
         }
 
-        function subnets(id, vpc_id) {
-            return DemoData.query({id: id, action: 'subnets', vpc_id: vpc_id}).$promise;
-        }
 
         function zones(id) {
             return DemoData.query({id: id, action: 'availability_zones'}).$promise;

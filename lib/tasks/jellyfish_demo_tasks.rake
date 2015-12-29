@@ -10,7 +10,7 @@ def sample_data(file)
   data.each { |d| yield d }
 end
 
-namespace :jellyDemo do
+namespace :sample do
   desc 'Generates demo data'
   task demo: :environment do
     providers = sample_data('providers').map do |data|
