@@ -24,7 +24,9 @@ module JellyfishDemo
         [
           { name: :region, value_type: :string, field: :demo_regions, required: true },
           { name: :flavor_id, value_type: :string, field: :demo_storage_flavors, required: true },
+          { name: :image_id, value_type: :string, label: 'Image ID', required: true },
           { name: :subnet_id, value_type: :string, field: :demo_subnets, required: true },
+          { name: :key_name, value_type: :string, label: 'Key Value', required: true }
         ]
       end
 

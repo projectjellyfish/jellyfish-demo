@@ -23,10 +23,6 @@ module JellyfishDemo
         ['demo']
       end
 
-      def questions
-        [{ name: :access_id, value_type: :string, field: :text, label: 'Access ID', required: true },
-         { name: :secret_key, value_type: :password, field: :password, label: 'Secret Key', required: :if_new }]
-      end
     end
   end
 end
