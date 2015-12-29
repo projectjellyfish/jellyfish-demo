@@ -4,6 +4,7 @@ module JellyfishDemo
     class Storage < ::ProductType
       def self.load_product_types
         return unless super
+
         transaction do
           [
             set('Demo Storage', 'ec795ba0-b090-4f63-bdd6-13c7063d999d', description: 'Demo Storage Product Type', provider_type: 'JellyfishDemo::Provider::Demo')
@@ -27,8 +28,8 @@ module JellyfishDemo
         ]
       end
 
-      def service_class
-        'JellyfishDemo::Service::Storage'.constantize
+      def product_class
+        'JellyfishDemo::Product::Storage'.constantize
       end
     end
   end
