@@ -1,30 +1,30 @@
 
 module JellyfishDemo
   module ProductType
-    class Software < ::ProductType
+    class Database < ::ProductType
       def self.load_product_types
         return unless super
 
         transaction do
           [
-            set('Demo Software', '6e1c01ab-64e9-43b0-891f-5657170c845d', description: 'Demo Software Product Type',
+            set('Demo Database', '398cbd70-0013-4222-b460-fdbd09656991', description: 'Demo Database Product Type',
                 provider_type: 'JellyfishDemo::Provider::Demo')
-          ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Software') }
+          ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Database') }
         end
       end
 
       def description
-        'Demo Software'
+        'Demo Database'
       end
 
       def tags
-        ['software']
+        ['database']
       end
 
       def product_questions
         [
           { name: :region, value_type: :string, field: :demo_regions, required: true },
-          { name: :flavor_id, value_type: :string, field: :demo_software_flavors, required: true },
+          { name: :flavor_id, value_type: :string, field: :demo_database_flavors, required: true },
           { name: :image_id, value_type: :string, label: 'Image ID', required: true },
           { name: :subnet_id, value_type: :string, field: :demo_subnets, required: true },
           { name: :key_name, value_type: :string, label: 'Key Value', required: true }
@@ -32,7 +32,7 @@ module JellyfishDemo
       end
 
       def product_class
-        'JellyfishDemo::Product::Software'.constantize
+        'JellyfishDemo::Product::Database'.constantize
       end
     end
   end

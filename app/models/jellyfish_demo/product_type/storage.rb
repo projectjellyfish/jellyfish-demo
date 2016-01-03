@@ -7,7 +7,8 @@ module JellyfishDemo
 
         transaction do
           [
-            set('Demo Storage', 'ec795ba0-b090-4f63-bdd6-13c7063d999d', description: 'Demo Storage Product Type', provider_type: 'JellyfishDemo::Provider::Demo')
+            set('Demo Storage', 'ec795ba0-b090-4f63-bdd6-13c7063d999d', description: 'Demo Storage Product Type',
+                provider_type: 'JellyfishDemo::Provider::Demo')
           ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Storage') }
         end
       end
@@ -17,7 +18,7 @@ module JellyfishDemo
       end
 
       def tags
-        ['demo', 'storage']
+        ['storage']
       end
 
       def product_questions

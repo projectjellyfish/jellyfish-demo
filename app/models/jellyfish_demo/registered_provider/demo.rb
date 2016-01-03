@@ -22,7 +22,6 @@ module JellyfishDemo
       def tags
         ['demo']
       end
-
     end
   end
 end

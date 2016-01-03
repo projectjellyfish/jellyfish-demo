@@ -103,12 +103,6 @@ namespace :sample do
       end]
     end
 
-    sample_data 'wizard_questions' do |data|
-      answers = data.delete 'answers'
-      puts "  #{data['text']}"
-      [data.delete('_assoc'), WizardQuestion.create(data).tap { |q| q.wizard_answers.create answers }]
-    end
-
     groups = sample_data('groups').map do |data|
       group_staff = data.delete('group_staff') || []
       puts "  #{data['name']}"
@@ -133,4 +127,3 @@ namespace :sample do
     end
   end
 end
-

@@ -7,36 +7,35 @@ module JellyfishDemo
       end
 
       def provision
-        server = nil
+        random_id = 1 + rand(99_999)
+        random_ip = rand(999)
 
-        handle_errors do
-          # TODO: EACH ANSWER SHOULD BE AN OPTIONAL DETAIL IF THEY EXIST
-          random_id = 1+rand(99999)
-          random_ip = rand(999)
+        details = {
+          image_id: product.settings[:image_id],
+          flavor_id: product.settings[:flavor_id],
+          key_name: product.settings[:key_name],
+          subnet_id: product.settings[:subnet_id],
+          instance_id: random_id,
+          public_ip_address: "192.178.0.#{random_ip}"
+        }
 
-          details = {
-            image_id: self.product.answers.find { |x| x.name == 'image_id' }.value,
-            flavor_id: self.product.answers.find { |x| x.name == 'flavor_id' }.value,
-            key_name: self.product.answers.find { |x| x.name == 'key_name' }.value,
-            subnet_id: self.product.answers.find { |x| x.name == 'subnet_id' }.value,
-            instance_id: random_id,
-            public_ip_address: "192.178.0.#{random_ip}"
-          }
+        # SAVE PRODUCT DETAILS
+        save_outputs(details, [['image_id', :image_id], ['flavor_id', :flavor_id], ['key_name', :key_name],
+          ['subnet_id', :subnet_id], ['instance_id', :instance_id], ['public_ip_address', :public_ip_address]],
+          ValueTypes::TYPES[:string]) if defined? details
 
-          # SAVE PRODUCT DETAILS
-          save_outputs(details, [ [ 'image_id', :image_id], [ 'flavor_id', :flavor_id ], [ 'key_name', :key_name ], ['subnet_id', :subnet_id ], [ 'instance_id', :instance_id], [ 'public_ip_address', :public_ip_address ]  ], ValueTypes::TYPES[:string]) if defined? details
+        # UPDATE STATUS
+        update_status :running, 'running'
+      end
 
-          # UPDATE STATUS
-          update_status(::Service.defined_enums['status']['running'], 'running')
-        end
+      def deprovision
+        update_status :terminated, 'terminated'
       end
 
       private
 
       def update_status(status, status_msg)
-        self.status = status
-        self.status_msg = status_msg
-        self.save
+        update_attributes status: status, status_msg: status_msg
       end
 
       def save_outputs(source, outputs_to_save, output_value_type)
@@ -49,15 +48,10 @@ module JellyfishDemo
       end
 
       def get_output(name)
-        self.service_outputs.where(name: name).first
-      end
-
-      def handle_errors
-        yield
-      rescue Excon::Errors::BadRequest, Excon::Errors::Forbidden => e
-        raise e, 'Request failed, check for valid credentials and proper permissions.', e.backtrace
+        self.service_outputs.find_by name: name
       end
     end
   end
 end
+
 
