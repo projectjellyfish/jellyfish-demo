@@ -512,6 +512,21 @@
     - name: time_to_deploy
       value: 4 minutes
       value_type: string
+    - name: region
+      value: us-west-1
+      value_type: string
+    - name: flavor_id
+      value: i2.2xlarge
+      value_type: string
+    - name: image_id
+      value: jmi-ee31288f
+      value_type: string
+    - name: subnet_id
+      value: subnet-6ab35740
+      value_type: string
+    - name: key_name
+      value: AbryLwra0ol6
+      value_type: string
 - _assoc: storage_s3
   name: AWS S3 Bucket
   description: AWS bucket storage
@@ -534,6 +549,21 @@
     - name: time_to_deploy
       value: 4 minutes
       value_type: string
+    - name: region
+      value: us-west-1
+      value_type: string
+    - name: flavor_id
+      value: i2.2xlarge
+      value_type: string
+    - name: image_id
+      value: jmi-ee31288f
+      value_type: string
+    - name: subnet_id
+      value: subnet-6ab35740
+      value_type: string
+    - name: key_name
+      value: AbryLwra0ol6
+      value_type: string
 - _assoc: storage_teradata
   name: Teradata
   description: Teradata
@@ -555,6 +585,21 @@
       value_type: string
     - name: time_to_deploy
       value: 15 minutes
+      value_type: string
+    - name: region
+      value: us-west-1
+      value_type: string
+    - name: flavor_id
+      value: i2.2xlarge
+      value_type: string
+    - name: image_id
+      value: jmi-ee31288f
+      value_type: string
+    - name: subnet_id
+      value: subnet-6ab35740
+      value_type: string
+    - name: key_name
+      value: AbryLwra0ol6
       value_type: string
 ## Applications
 #{ name: 'LAMP Stack', description: 'Linux, Apache, MySQL, PHP', active: true, img: 'products/php.png', deleted_at: nil, product_type: 'Platforms', setup_price: '10.0', hourly_price: '10.0', monthly_price: '10.0', tag_list: %w(software stack aws production linux apache php lamp) },

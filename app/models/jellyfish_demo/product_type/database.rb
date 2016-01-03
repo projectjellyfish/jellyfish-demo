@@ -8,7 +8,7 @@ module JellyfishDemo
         transaction do
           [
             set('Demo Database', '398cbd70-0013-4222-b460-fdbd09656991', description: 'Demo Database Product Type',
-                provider_type: 'JellyfishDemo::Provider::Demo')
+            provider_type: 'JellyfishDemo::Provider::Demo')
           ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Database') }
         end
       end
@@ -37,4 +37,3 @@ module JellyfishDemo
     end
   end
 end
-

@@ -20,14 +20,6 @@ namespace :sample do
       [data.delete('_assoc'), Provider.create(data)]
     end
 
-    orgs = sample_data('organizations').map do |data|
-      alerts = data.delete 'alerts'
-      puts "  #{data['name']}"
-      [data.delete('_assoc'), Organization.create(data).tap do |org|
-        org.alerts.create(alerts) unless alerts.nil?
-      end]
-    end
-
     users = sample_data('staff').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['first_name']} #{data['last_name']}"

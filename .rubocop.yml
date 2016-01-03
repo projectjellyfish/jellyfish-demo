@@ -1,7 +1,9 @@
 AllCops:
   Exclude:
     - bin/**
+    - lib/tasks/jellyfish_demo_tasks.rake
     - lib/jellyfish_demo.rb
+    - db/**/*
   RunRailsCops: true
 
 ClassLength:

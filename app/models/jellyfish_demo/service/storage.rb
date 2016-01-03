@@ -21,7 +21,7 @@ module JellyfishDemo
 
         # SAVE PRODUCT DETAILS
         save_outputs(details, [['image_id', :image_id], ['flavor_id', :flavor_id], ['key_name', :key_name],
-          ['subnet_id', :subnet_id], ['instance_id', :instance_id], ['public_ip_address', :public_ip_address]],
+                               ['subnet_id', :subnet_id], ['instance_id', :instance_id], ['public_ip_address', :public_ip_address]],
           ValueTypes::TYPES[:string]) if defined? details
 
         # UPDATE STATUS
@@ -41,17 +41,15 @@ module JellyfishDemo
       def save_outputs(source, outputs_to_save, output_value_type)
         outputs_to_save.each do |output_name, source_key|
           next unless defined? source[source_key]
-          service = get_output(output_name) || self.service_outputs.new(name: output_name)
+          service = get_output(output_name) || service_outputs.new(name: output_name)
           service.update_attributes(value: source[source_key], value_type: output_value_type) unless service.nil?
           service.save
         end
       end
 
       def get_output(name)
-        self.service_outputs.find_by name: name
+        service_outputs.find_by name: name
       end
     end
   end
 end
-
-
