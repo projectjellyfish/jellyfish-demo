@@ -1,19 +1,35 @@
-gnore spec database.
-spec/dummy/db
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
 
-# Ignore log and tmp files.
-spec/test_app/log
-tmp
-spec/dummy/log
-spec/dummy/tmp
-coverage
+# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/secrets.yml
 
+## Environment normalisation:
+/.bundle
+/vendor/bundle
 
-# Ignore RubyMine files
-.idea
+# these should all be checked in to normalise the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
 
-# Ignore dotenv file
-.env
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc
 
-# Ignore Gemfile lock
-Gemfile.lock
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+# Ignore pow environment settings
+.powenv
