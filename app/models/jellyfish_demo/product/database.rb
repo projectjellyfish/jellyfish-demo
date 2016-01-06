@@ -1,6 +1,6 @@
 module JellyfishDemo
   module Product
-    class Storage < ::Product
+    class Database < ::Product
       def order_questions
         [
           { name: :master_username, value_type: :string, label: 'Admin Username', required: true },
@@ -9,7 +9,7 @@ module JellyfishDemo
       end
 
       def service_class
-        'JellyfishDemo::Service::Storage'.constantize
+        'JellyfishDemo::Service::Database'.constantize
       end
     end
   end

@@ -1,4 +1,3 @@
-
 module JellyfishDemo
   module ProductType
     class Storage < ::ProductType
@@ -21,13 +20,44 @@ module JellyfishDemo
         ['storage']
       end
 
+
+      # disk space
+      # private/public
+      # on/off
+      # 2-3 projects per dataset
+      # Smaller catalogue
+      # Healthcare : HIPAA On or off
+      # Federal : Jesus, ABA, JIK, NBA, QPS
+
+      # Reset database from UI
+      # Not allowed to nuke it
+      # Load dataset
+
+      #
+      # Create rails task to load each dataset
+      # rake demo:load_dataset[federal]
+      # Call some kind of class in some lib dir, does actual loading
+      # rake demo:federal
+
       def product_questions
+        privacy_options = [
+          {label: 'Private', value: 'private'},
+          {label: 'Public', value: 'public'},
+        ]
+
+        flavor_options = [
+          {label: "High I/O Instance - i2.xlarge", value: "i2.xlarge"},
+          {label: "High I/O Instance  - i2.2xlarge", value: "i2.2xlarge"},
+          {label: "High I/O Instance - i2.4xlarge", value: "i2.4xlarge"},
+          {label: "Dense Storage Instance - d2.xlarge", value: "d2.xlarge"},
+          {label: "Dense Storage Instance - d2.2xlarge", value: "d2.2xlarge"}
+        ]
+
         [
           { name: :region, value_type: :string, field: :demo_regions, required: true },
-          { name: :flavor_id, value_type: :string, field: :demo_storage_flavors, required: true },
-          { name: :image_id, value_type: :string, label: 'Image ID', required: true },
-          { name: :subnet_id, value_type: :string, field: :demo_subnets, required: true },
-          { name: :key_name, value_type: :string, label: 'Key Value', required: true }
+          { name: :flavor_id, value_type: :string, field: flavor_options, required: true },
+          { name: :disk_size, value_type: :string, label: 'Disk Size', required: true },
+          { name: :privary, value_type: :string, field: privacy_options , required: true },
         ]
       end
 

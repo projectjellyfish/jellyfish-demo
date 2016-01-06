@@ -1,25 +1,27 @@
 module JellyfishDemo
   module Service
-    class Storage < ::Service
+    class Server < ::Service
       def operations
         actions = super.merge :terminate
         actions
       end
 
       def provision
-        random_id = 1 + rand(99_999)
-        random_ip = rand(255)
+        random_id = rand(1..99_999)
+        random_ip = rand(1..255)
 
         {
           image_id: product.settings[:image_id],
           flavor_id: product.settings[:flavor_id],
-          key_name: product.settings[:key_name],
-          subnet_id: product.settings[:subnet_id],
+          engine: product.settings[:engine],
           instance_id: random_id,
           public_ip_address: "192.178.0.#{random_ip}"
         }.each do |value, key|
           service_outputs.create name: key, value: value, value_type: 'string'
         end
+
+        # SAVE PRODUCT DETAILS
+        #save_outputs(details, %i(image_id flavor_id engine instance_id public_ip_address), ValueTypes::TYPES[:string])
 
         # UPDATE STATUS
         update_status :running, 'running'

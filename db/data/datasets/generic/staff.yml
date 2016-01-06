@@ -19,7 +19,7 @@
   role: user
   alerts:
     - status: ok
-      message: User has 2 months to compelte training.
+      message: User has 2 months to complete training.
       category: training
     - status: warning
       message: User has 1 week to complete training.

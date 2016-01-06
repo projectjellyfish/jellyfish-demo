@@ -48,6 +48,19 @@ module JellyfishDemo
       end
     end
 
+    initializer 'jellyfish_demo.load_products', before: :load_config_initializers do
+      begin
+        if ::Product.table_exists?
+          Dir[File.expand_path '../../../app/models/jellyfish_demo/product/*.rb', __FILE__].each do |file|
+            require_dependency file
+          end
+        end
+      rescue
+        # ignored
+        nil
+      end
+    end
+
     initializer 'jellyfish_demo.register_extension', after: :finisher_hook do
       Jellyfish::Extension.register 'jellyfish-demo' do
         requires_jellyfish '>= 4.0.0'

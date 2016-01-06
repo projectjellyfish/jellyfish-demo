@@ -13,34 +13,11 @@ end
 namespace :sample do
   desc 'Generates demo data'
   task demo: :environment do
-    providers = sample_data('providers').map do |data|
-      reg_provider = RegisteredProvider.find_by uuid: data.delete('registered_provider')
-      data.merge! registered_provider: reg_provider
-      puts "  #{data['name']}"
-      [data.delete('_assoc'), Provider.create(data)]
-    end
-
     users = sample_data('staff').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['first_name']} #{data['last_name']}"
       [data.delete('_assoc'), Staff.create(data).tap do |user|
         user.alerts.create(alerts) unless alerts.nil?
-      end]
-    end
-
-    categories = sample_data('product_categories').map do |data|
-      puts "  #{data['name']}"
-      [data.delete('_assoc'), ProductCategory.create(data)]
-    end
-
-    products = sample_data('products').map do |data|
-      answers = data.delete 'answers'
-      product_type = ProductType.find_by uuid: data.delete('product_type')
-      provider = providers.assoc(data.delete 'provider').last
-      data.merge! product_type: product_type, provider: provider
-      puts "  #{data['name']}"
-      [data.delete('_assoc'), Product.create(data).tap do |product|
-        product.answers.create(answers) unless answers.nil?
       end]
     end
 

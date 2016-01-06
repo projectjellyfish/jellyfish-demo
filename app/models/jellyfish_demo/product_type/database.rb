@@ -1,4 +1,3 @@
-
 module JellyfishDemo
   module ProductType
     class Database < ::ProductType
@@ -7,8 +6,8 @@ module JellyfishDemo
 
         transaction do
           [
-            set('Demo Database', '398cbd70-0013-4222-b460-fdbd09656991', description: 'Demo Database Product Type',
-            provider_type: 'JellyfishDemo::Provider::Demo')
+            set('Demo Database', '18be4e42-cbea-45bb-ac28-65c78d54c8e3', description: 'Demo Database Product Type',
+                provider_type: 'JellyfishDemo::Provider::Demo')
           ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Database') }
         end
       end
@@ -22,12 +21,18 @@ module JellyfishDemo
       end
 
       def product_questions
+        engine_options = [
+          {label: 'MySQL', value: 'mysql'},
+          {label: 'PostgreSQL', value: 'postgresql'},
+          {label: 'MongoDB', value: 'mongodb'},
+          {label: 'Cassandra', value: 'cassandra'},
+        ]
+
         [
           { name: :region, value_type: :string, field: :demo_regions, required: true },
-          { name: :flavor_id, value_type: :string, field: :demo_database_flavors, required: true },
-          { name: :image_id, value_type: :string, label: 'Image ID', required: true },
-          { name: :subnet_id, value_type: :string, field: :demo_subnets, required: true },
-          { name: :key_name, value_type: :string, label: 'Key Value', required: true }
+          { name: :cpus, value_type: :string, label: 'CPUs', required: true },
+          { name: :memory, value_type: :string, label: 'Memory (GiB)', required: true },
+          { name: :engine, value_type: :string, field: :select, options: engine_options, label: 'Engine', required: true }
         ]
       end
 

@@ -38,23 +38,6 @@
             }
         });
 
-        Forms.fields('demo_software_flavors', {
-            type: 'select',
-            templateOptions: {
-                label: 'Instance Type',
-                options: [
-                    {label: "Burstable Performance Instance - t2.nano", value: "t2.nano"},
-                    {label: "Burstable Performance Instance - t2.micro", value: "t2.micro"},
-                    {label: "Burstable Performance Instance - t2.small", value: "t2.small"},
-                    {label: "Burstable Performance Instance - t2.medium", value: "t2.medium"},
-                    {label: "Burstable Performance Instance - t2.large", value: "t2.large"},
-                    {label: "Fixed Performance Instance - m4.large", value: "m4.large"},
-                    {label: "Fixed Performance Instance - m4.2xlarge", value: "m4.2xlarge"},
-                    {label: "Fixed Performance Instance - m4.4xlarge", value: "m4.4xlarge"}
-                ]
-            }
-        });
-
         Forms.fields('demo_subnets', {
             type: 'select',
             templateOptions: {
