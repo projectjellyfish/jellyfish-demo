@@ -20,10 +20,6 @@ module JellyfishDemo
           service_outputs.create name: key, value: value, value_type: 'string'
         end
 
-        # SAVE PRODUCT DETAILS
-        #save_outputs(details, %i(image_id flavor_id engine instance_id public_ip_address), ValueTypes::TYPES[:string])
-
-        # UPDATE STATUS
         update_status :running, 'running'
       end
 

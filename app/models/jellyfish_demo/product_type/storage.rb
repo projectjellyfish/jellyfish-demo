@@ -6,8 +6,7 @@ module JellyfishDemo
 
         transaction do
           [
-            set('Demo Storage', 'ec795ba0-b090-4f63-bdd6-13c7063d999d', description: 'Demo Storage Product Type',
-                provider_type: 'JellyfishDemo::Provider::Demo')
+            set('Demo Storage', 'ec795ba0-b090-4f63-bdd6-13c7063d999d', description: 'Demo Storage Product Type', provider_type: 'JellyfishDemo::Provider::Demo')
           ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Storage') }
         end
       end
@@ -20,44 +19,25 @@ module JellyfishDemo
         ['storage']
       end
 
-
-      # disk space
-      # private/public
-      # on/off
-      # 2-3 projects per dataset
-      # Smaller catalogue
-      # Healthcare : HIPAA On or off
-      # Federal : Jesus, ABA, JIK, NBA, QPS
-
-      # Reset database from UI
-      # Not allowed to nuke it
-      # Load dataset
-
-      #
-      # Create rails task to load each dataset
-      # rake demo:load_dataset[federal]
-      # Call some kind of class in some lib dir, does actual loading
-      # rake demo:federal
-
       def product_questions
         privacy_options = [
-          {label: 'Private', value: 'private'},
-          {label: 'Public', value: 'public'},
+          { label: 'Private', value: 'private' },
+          { label: 'Public', value: 'public' }
         ]
 
         flavor_options = [
-          {label: "High I/O Instance - i2.xlarge", value: "i2.xlarge"},
-          {label: "High I/O Instance  - i2.2xlarge", value: "i2.2xlarge"},
-          {label: "High I/O Instance - i2.4xlarge", value: "i2.4xlarge"},
-          {label: "Dense Storage Instance - d2.xlarge", value: "d2.xlarge"},
-          {label: "Dense Storage Instance - d2.2xlarge", value: "d2.2xlarge"}
+          { label: 'High I/O Instance - i2.xlarge', value: 'i2.xlarge' },
+          { label: 'High I/O Instance  - i2.2xlarge', value: 'i2.2xlarge' },
+          { label: 'High I/O Instance - i2.4xlarge', value: 'i2.4xlarge' },
+          { label: 'Dense Storage Instance - d2.xlarge', value: 'd2.xlarge' },
+          { label: 'Dense Storage Instance - d2.2xlarge', value: 'd2.2xlarge' }
         ]
 
         [
           { name: :region, value_type: :string, field: :demo_regions, required: true },
           { name: :flavor_id, value_type: :string, field: flavor_options, required: true },
           { name: :disk_size, value_type: :string, label: 'Disk Size', required: true },
-          { name: :privary, value_type: :string, field: privacy_options , required: true },
+          { name: :privary, value_type: :string, field: privacy_options, required: true }
         ]
       end
 

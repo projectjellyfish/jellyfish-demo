@@ -1673,8 +1673,8 @@
   name: 100 Node Hadoop Cluster
   description: 100 nodes of processing power
   img: products/hadoop.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
-  type: JellyfishDemo::Product::Software
+  product_type: 398cbd70-0013-4222-b460-fdbd09656991
+  type: JellyfishDemo::Product::Server
   provider: demo
   active: true
   setup_price: 20.00
@@ -1692,7 +1692,7 @@
       value: us-west-1
       value_type: string
     - name: flavor_id
-      value: t2.large
+      value: t2.xlarge
       value_type: string
     - name: image_id
       value: jmi-ee31288f
@@ -1707,8 +1707,8 @@
   name: 10 Node Hadoop Cluster
   description: 10 nodes of processing power
   img: products/hadoop.png
-  product_type: 6e1c01ab-64e9-43b0-891f-5657170c845d
-  type: JellyfishDemo::Product::Software
+  product_type: 398cbd70-0013-4222-b460-fdbd09656991
+  type: JellyfishDemo::Product::Server
   provider: demo
   active: true
   setup_price: 5.00
@@ -1762,6 +1762,9 @@
     - name: database
       value: MongoDB
       value_type: string
+    - name: language
+      value: Java
+      value_type: string
     - name: disk_size
       value: 10000
       value_type: integer
@@ -1772,7 +1775,7 @@
       value: us-west-1
       value_type: string
     - name: flavor_id
-      value: t2.large
+      value: t2.xlarge
       value_type: string
     - name: image_id
       value: jmi-ee31288f
@@ -1805,6 +1808,12 @@
     - name: image_id
       value: jmi-ee31288f
       value_type: string
+    - name: language
+      value: Java
+      value_type: string
+    - name: database
+      value: MongoDB
+      value_type: string
     - name: subnet_id
       value: subnet-6ab35740
       value_type: string
@@ -1836,6 +1845,12 @@
     - name: subnet_id
       value: subnet-6ab35740
       value_type: string
+    - name: language
+      value: Java
+      value_type: string
+    - name: database
+      value: Cassandra
+      value_type: string
     - name: key_name
       value: AbryLwra0ol6
       value_type: string
@@ -1865,6 +1880,12 @@
     - name: subnet_id
       value: subnet-6ab35740
       value_type: string
+    - name: language
+      value: Java
+      value_type: string
+    - name: database
+      value: MongoDB
+      value_type: string
     - name: key_name
       value: AbryLwra0ol6
       value_type: string
@@ -1893,6 +1914,12 @@
     - name: subnet_id
       value: subnet-6ab35740
       value_type: string
+    - name: language
+      value: Java
+      value_type: string
+    - name: database
+      value: PostgreSQL
+      value_type: string
     - name: key_name
       value: AbryLwra0ol6
       value_type: string
@@ -1920,6 +1947,12 @@
       value_type: string
     - name: subnet_id
       value: subnet-6ab35740
+      value_type: string
+    - name: language
+      value: Java
+      value_type: string
+    - name: database
+      value: PostgreSQL
       value_type: string
     - name: key_name
       value: AbryLwra0ol6
@@ -1961,6 +1994,12 @@
     - name: subnet_id
       value: subnet-6ab35740
       value_type: string
+    - name: language
+      value: Python
+      value_type: string
+    - name: database
+      value: MySQL
+      value_type: string
     - name: key_name
       value: AbryLwra0ol6
       value_type: string
@@ -1989,6 +2028,12 @@
       value_type: string
     - name: subnet_id
       value: subnet-6ab35740
+      value_type: string
+    - name: language
+      value: Java
+      value_type: string
+    - name: database
+      value: PostgreSQL
       value_type: string
     - name: key_name
       value: AbryLwra0ol6

@@ -23,13 +23,6 @@ module JellyfishDemo
           service_outputs.create name: key, value: value, value_type: 'string'
         end
 
-        # SAVE PRODUCT DETAILS
-        # service.update_attributes(details, [['image_id', :image_id], ['flavor_id', :flavor_id], ['database', :database],
-        #                        ['language', :language], ['key_name', :key_name], ['subnet_id', :subnet_id],
-        #                        ['instance_id', :instance_id], ['public_ip_address', :public_ip_address]],
-        #              ValueTypes::TYPES[:string])
-
-        # UPDATE STATUS
         update_status :running, 'running'
       end
 

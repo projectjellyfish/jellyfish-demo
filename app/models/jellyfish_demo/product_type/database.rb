@@ -6,8 +6,7 @@ module JellyfishDemo
 
         transaction do
           [
-            set('Demo Database', '18be4e42-cbea-45bb-ac28-65c78d54c8e3', description: 'Demo Database Product Type',
-                provider_type: 'JellyfishDemo::Provider::Demo')
+            set('Demo Database', '18be4e42-cbea-45bb-ac28-65c78d54c8e3', description: 'Demo Database Product Type', provider_type: 'JellyfishDemo::Provider::Demo')
           ].each { |s| create! s.merge!(type: 'JellyfishDemo::ProductType::Database') }
         end
       end
@@ -22,10 +21,10 @@ module JellyfishDemo
 
       def product_questions
         engine_options = [
-          {label: 'MySQL', value: 'mysql'},
-          {label: 'PostgreSQL', value: 'postgresql'},
-          {label: 'MongoDB', value: 'mongodb'},
-          {label: 'Cassandra', value: 'cassandra'},
+          { label: 'MySQL', value: 'mysql' },
+          { label: 'PostgreSQL', value: 'postgresql' },
+          { label: 'MongoDB', value: 'mongodb' },
+          { label: 'Cassandra', value: 'cassandra' }
         ]
 
         [

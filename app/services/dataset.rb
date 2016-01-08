@@ -1,59 +1,43 @@
 module JellyfishDemo
   class Dataset
-    def self.load_generic
-      load_dataset(generic_data)
-    end
+    def self.load_generic_dataset
+      reset_db
 
-    private
-
-    def self.reset_db
-      binding.pry
-      ActiveRecord::Base::Provider.destroy_all
-      ActiveRecord::Base::Product.destroy_all
-      ActiveRecord::Base::ProductType.destroy_all
-      ActiveRecord::Base::ProductCategory.destroy_all
-      ActiveRecord::Base::ProjectQuestion.destroy_all
-      ActiveRecord::Base::Project.destroy_all
-      ActiveRecord::Base::Service.destroy_all
-    end
-
-    def load_dataset(dataset)
-      binding.pry
-      dataset = dataset
-      dataset('providers').map do |data|
-        binding.pry
+      providers = generic_data('providers').map do |data|
         reg_provider = ActiveRecord::Base::RegisteredProvider.find_by uuid: data.delete('registered_provider')
         data.merge! registered_provider: reg_provider
-        puts "  #{data['name']}"
-        [data.delete('_assoc'), ActiveRecord::Base::Provider.create(data)]
+        [data.delete('_assoc'), Provider.create(data)]
       end
 
-      dataset('products').map do |data|
+      users = generic_data('staff').map do |data|
+        alerts = data.delete 'alerts'
+        [data.delete('_assoc'), ActiveRecord::Base::Staff.create(data).tap do |user|
+          user.alerts.create(alerts) unless alerts.nil?
+        end]
+      end
+
+      generic_data('product_categories').map do |data|
+        [data.delete('_assoc'), ActiveRecord::Base::ProductCategory.create(data)]
+      end
+
+      products = generic_data('products').map do |data|
         answers = data.delete 'answers'
         product_type = ActiveRecord::Base::ProductType.find_by uuid: data.delete('product_type')
         provider = providers.assoc(data.delete 'provider').last
         data.merge! product_type: product_type, provider: provider
-        puts "  #{data['name']}"
         [data.delete('_assoc'), ActiveRecord::Base::Product.create(data).tap do |product|
           product.answers.create(answers) unless answers.nil?
         end]
       end
 
-      dataset('product_categories').map do |data|
-        puts "  #{data['name']}"
-        [data.delete('_assoc'), ActiveRecord::Base::ProductCategory.create(data)]
+      project_questions = generic_data('project_questions').map do |data|
+        [data.delete('_assoc'), ActiveRecord::Base::ProjectQuestion.create(data)]
       end
 
-      # dataset('project_questions').map do |data|
-      #   puts "  #{data['question']}"
-      #   [data.delete('_assoc'), ActiveRecord::Base::ProjectQuestion.create(data)]
-      # end
-
-      dataset('projects').map do |data|
+      projects = generic_data('projects').map do |data|
         approvals = data.delete 'approvals'
         alerts = data.delete 'alerts'
         answers = data.delete 'answers'
-        puts "  #{data['name']}"
         [data.delete('_assoc'), ActiveRecord::Base::Project.create(data).tap do |project|
           project.alerts.create(alerts) unless alerts.nil?
           unless approvals.nil?
@@ -73,12 +57,11 @@ module JellyfishDemo
         end]
       end
 
-      dataset 'services' do |data|
+      generic_data('services') do |data|
         alerts = data.delete 'alerts'
         order = data.delete 'order'
         service_outputs = data.delete 'service_outputs'
         data['uuid'] = SecureRandom.uuid
-        puts "  #{data['name']}"
         [data.delete('_assoc'), ActiveRecord::Base::Service.create(data).tap do |service|
           service.alerts.create(alerts) unless alerts.nil?
           service.service_outputs.create(service_outputs) unless service_outputs.nil?
@@ -94,14 +77,52 @@ module JellyfishDemo
           service.create_order order
         end]
       end
+
+      groups = generic_data('groups').map do |data|
+        group_staff = data.delete('group_staff') || []
+        [data.delete('_assoc'), ActiveRecord::Base::Group.create(data).tap do |group|
+          next if group_staff.nil?
+          group_staff.each do |staff|
+            group.staff << users.assoc(staff).last
+          end
+        end]
+      end
+
+      roles = generic_data('roles').map do |data|
+        [data.delete('_assoc'), ActiveRecord::Base::Role.create(data)]
+      end
+
+      generic_data 'memberships' do |data|
+        project = projects.assoc(data['project']).last
+        group = groups.assoc(data['group']).last
+        role = roles.assoc(data['role']).last
+        ActiveRecord::Base::Membership.create(project: project, group: group, role: role)
+      end
+    end
+
+    def self.reset_db
+      ActiveRecord::Base::ApiToken.destroy_all
+      ActiveRecord::Base::Answer.destroy_all
+      ActiveRecord::Base::Alert.destroy_all
+      ActiveRecord::Base::Group.destroy_all
+      ActiveRecord::Base::Membership.destroy_all
+      ActiveRecord::Base::Provider.destroy_all
+      ActiveRecord::Base::Product.destroy_all
+      ActiveRecord::Base::ProductType.destroy_all
+      ActiveRecord::Base::ProductCategory.destroy_all
+      ActiveRecord::Base::ProjectQuestion.destroy_all
+      ActiveRecord::Base::Project.destroy_all
+      ActiveRecord::Base::Service.destroy_all
+      ActiveRecord::Base::Order.destroy_all
+      ActiveRecord::Base::Staff.delete_all
+      ActiveRecord::Base::Staff.delete_all
+      ActiveRecord::Base::Role.destroy_all
     end
 
     def self.generic_data(file)
-      puts "-- Loading #{file.titlecase}"
       data = YAML.load_file(File.join [JellyfishDemo::Engine.root, 'db', 'data', 'datasets', 'generic', [file, 'yml'].join('.')])
       return data unless block_given?
       data.each { |d| yield d }
     end
   end
 end
-
