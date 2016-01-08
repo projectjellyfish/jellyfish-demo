@@ -48,8 +48,9 @@ module JellyfishDemo
         [
           { name: :region, value_type: :string, field: :demo_regions, required: true },
           { name: :flavor_id, value_type: :string, field: server_options, label: 'Instance Type', required: true },
-          { name: :database, value_type: :string, field: database_options, label: 'Database', required: true },
-          { name: :language, value_type: :string, field: language_options, label: 'Language', required: true },
+          { name: :database, value_type: :string, field: database_options, label: 'Database', required: false },
+          { name: :language, value_type: :string, field: language_options, label: 'Language', required: false },
+          { name: :software, value_type: :string, label: 'Software', required: false },
           { name: :image_id, value_type: :string, label: 'Image ID', required: true },
           { name: :subnet_id, value_type: :string, field: :demo_subnets, required: true },
           { name: :key_name, value_type: :string, label: 'Key Value', required: true }

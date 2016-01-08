@@ -3,10 +3,12 @@ module JellyfishDemo
     def self.load_generic_dataset
       reset_db
 
+      #binding.pry
+
       providers = generic_data('providers').map do |data|
         reg_provider = ActiveRecord::Base::RegisteredProvider.find_by uuid: data.delete('registered_provider')
         data.merge! registered_provider: reg_provider
-        [data.delete('_assoc'), Provider.create(data)]
+        [data.delete('_assoc'), ActiveRecord::Base::Provider.create(data)]
       end
 
       users = generic_data('staff').map do |data|
@@ -106,12 +108,16 @@ module JellyfishDemo
       ActiveRecord::Base::Alert.destroy_all
       ActiveRecord::Base::Group.destroy_all
       ActiveRecord::Base::Membership.destroy_all
-      ActiveRecord::Base::Provider.destroy_all
-      ActiveRecord::Base::Product.destroy_all
-      ActiveRecord::Base::ProductType.destroy_all
-      ActiveRecord::Base::ProductCategory.destroy_all
-      ActiveRecord::Base::ProjectQuestion.destroy_all
-      ActiveRecord::Base::Project.destroy_all
+      ActiveRecord::Base::Provider.delete_all
+      ActiveRecord::Base::Provider.delete_all
+      ActiveRecord::Base::Product.delete_all
+      ActiveRecord::Base::Product.delete_all
+      ActiveRecord::Base::ProductCategory.delete_all
+      ActiveRecord::Base::ProductCategory.delete_all
+      ActiveRecord::Base::ProjectQuestion.delete_all
+      ActiveRecord::Base::ProjectQuestion.delete_all
+      ActiveRecord::Base::Project.delete_all
+      ActiveRecord::Base::Project.delete_all
       ActiveRecord::Base::Service.destroy_all
       ActiveRecord::Base::Order.destroy_all
       ActiveRecord::Base::Staff.delete_all

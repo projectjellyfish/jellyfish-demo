@@ -1429,6 +1429,9 @@
     - name: flavor_id
       value: t2.medium
       value_type: string
+    - name: database
+      value: MySQL 5.5
+      value_type: string
     - name: image_id
       value: jmi-ee31288f
       value_type: string
@@ -1471,6 +1474,9 @@
       value_type: string
     - name: region
       value: us-west-1
+      value_type: string
+    - name: database
+      value: MySQL 5.5
       value_type: string
     - name: flavor_id
       value: t2.medium
@@ -1520,6 +1526,9 @@
       value_type: string
     - name: flavor_id
       value: t2.medium
+      value_type: string
+    - name: database
+      value: MySQL 5.5
       value_type: string
     - name: image_id
       value: jmi-ee31288f

@@ -5,7 +5,7 @@
 
 require File.dirname(__FILE__) + '/../../app/services/dataset.rb'
 
-namespace :sample do
+namespace :demo do
   desc 'Generates generic demo data'
   task generic: :environment do
     JellyfishDemo::Dataset.load_generic_dataset

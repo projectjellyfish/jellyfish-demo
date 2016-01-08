@@ -17,11 +17,10 @@ module JellyfishDemo
           subnet_id: product.settings[:subnet_id],
           instance_id: random_id,
           public_ip_address: "192.178.0.#{random_ip}"
-        }.each do |value, key|
-          service_outputs.create name: key, value: value, value_type: 'string'
+        }.each do |key, value|
+          service_outputs.create name: key, value: value, value_type: 'string' unless value.nil?
         end
 
-        # UPDATE STATUS
         update_status :running, 'running'
       end
 
