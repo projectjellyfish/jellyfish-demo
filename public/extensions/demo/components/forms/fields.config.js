@@ -24,6 +24,18 @@
       }
     });
 
+    Forms.fields('regions', {
+      type: 'select',
+      templateOptions: {
+        label: 'Region',
+        options: [
+          {label: 'N. California (US-West-1)', value: 'us-west-1', group: 'US'},
+          {label: 'N. Virginia (US-East-1)', value: 'us-east-1', group: 'US'},
+          {label: 'Oregon (US-West-2)', value: 'us-west-2', group: 'US'}
+        ]
+      }
+    });
+
     Forms.fields('aws_ec2_images', {
       type: 'async_select',
       templateOptions: {

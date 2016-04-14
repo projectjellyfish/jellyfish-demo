@@ -17,7 +17,7 @@
   }
 
   /** @ngInject */
-  function StateController(service, AwsData) {
+  function StateController(service, DemoData) {
     var vm = this;
 
     vm.title = '';
@@ -45,7 +45,7 @@
 
     function deprovision(){
       vm.response = null;
-      AwsData['deprovision'](vm.service.provider.id, vm.service.id).then(handleResponse, handleError);
+      DemoData['deprovision'](vm.service.provider.id, vm.service.id).then(handleResponse, handleError);
     }
 
     function getServiceOutput(service_output_name){

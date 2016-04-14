@@ -16,9 +16,25 @@ module JellyfishDemo
       def provision
         storage = nil
         handle_errors do
+
+          # generate random name
           storage_name = "id-#{SecureRandom.hex(10)}"
+
+          # retrieve random details
+          details = {
+              :allocated_storage => self.product.answers.find { |x| x.name == 'allocated_storage' }.value,
+          }
+
+          # create the s3 bucket
           storage = client.directories.create(key: storage_name)
+
+          # save db outputs from product details
+          save_outputs(details, [ ['Storage', :allocated_storage]], ValueTypes::TYPES[:string]) if defined? details
+
+          # save outputs from provisioning
           save_outputs({ key: storage.key }, [ [ 'instance_id', :key ] ], ValueTypes::TYPES[:string]) if defined? storage
+
+          # update status of service to running
           update_status(::Service.defined_enums['status']['running'], 'running')
         end
       end

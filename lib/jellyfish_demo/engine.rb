@@ -67,9 +67,7 @@ module JellyfishDemo
 
         load_scripts 'extensions/demo/components/forms/fields.config.js',
           'extensions/demo/resources/demo-data.factory.js',
-          'extensions/demo/states/services/details/demo/ec2/ec2.state.js',
-          'extensions/demo/states/services/details/demo/s3/s3.state.js',
-          'extensions/demo/states/services/details/demo/rds/rds.state.js'
+          'extensions/demo/states/services/details/demo/s3/s3.state.js'
 
         mount_extension JellyfishDemo::Engine, at: :demo
       end
