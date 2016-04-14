@@ -1,44 +1,4 @@
 class DemoPolicy < ApplicationPolicy
-  def ec2_flavors?
-    logged_in?
-  end
-
-  def rds_engines?
-    logged_in?
-  end
-
-  def rds_versions?
-    logged_in?
-  end
-
-  def rds_flavors?
-    logged_in?
-  end
-
-  def ec2_images?
-    logged_in?
-  end
-
-  def vpcs?
-    logged_in?
-  end
-
-  def subnets?
-    logged_in?
-  end
-
-  def availability_zones?
-    logged_in?
-  end
-
-  def key_names?
-    logged_in?
-  end
-
-  def security_groups?
-    logged_in?
-  end
-
   def deprovision?
     logged_in?
   end
