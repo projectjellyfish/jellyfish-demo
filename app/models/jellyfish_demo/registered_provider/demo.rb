@@ -16,7 +16,7 @@ module JellyfishDemo
       end
 
       def description
-        'Amazon Web Services'
+        'Demo Services'
       end
 
       def tags

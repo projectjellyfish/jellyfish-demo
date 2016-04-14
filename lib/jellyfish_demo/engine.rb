@@ -9,14 +9,6 @@ module JellyfishDemo
       g.helper false
     end
 
-    initializer :append_migrations do |app|
-      unless app.root.to_s.match root.to_s
-        config.paths['db/migrate'].expanded.each do |expanded_path|
-          app.config.paths['db/migrate'] << expanded_path
-        end
-      end
-    end
-
     # Initializer to combine this engines static assets with the static assets of the hosting site.
     initializer 'static assets' do |app|
       app.middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public")
@@ -67,7 +59,7 @@ module JellyfishDemo
 
         load_scripts 'extensions/demo/components/forms/fields.config.js',
           'extensions/demo/resources/demo-data.factory.js',
-          'extensions/demo/states/services/details/demo/s3/s3.state.js'
+          'extensions/demo/states/services/details/demo/server/server.state.js'
 
         mount_extension JellyfishDemo::Engine, at: :demo
       end

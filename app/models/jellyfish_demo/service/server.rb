@@ -1,6 +1,6 @@
 module JellyfishDemo
   module Service
-    class S3 < ::Service::Storage
+    class Server < ::Service::Compute
       def actions
         actions = super.merge :terminate
         actions

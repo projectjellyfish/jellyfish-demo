@@ -2,7 +2,7 @@ module JellyfishDemo
   module Provider
     class Demo < ::Provider
       def client
-        @s3_client ||= begin
+        @client ||= begin
           MockClient.new credentials
         end
       end

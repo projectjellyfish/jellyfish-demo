@@ -9,7 +9,7 @@
     StateOverride.override('services.details', function(service) {
       if ('JellyfishDemo::Service::S3' == service.type) {
         return {
-          templateUrl: 'extensions/demo/states/services/details/demo/s3/s3.html',
+          templateUrl: 'extensions/demo/states/services/details/demo/server/server.html',
           controller: StateController
         };
       }

@@ -1,24 +1,24 @@
 module JellyfishDemo
   module ProductType
-    class S3 < ::ProductType
+    class Server < ::ProductType
       def self.load_product_types
         return unless super
 
         transaction do
           [
-            set('S3 Instance', '11ca0e0e-617d-45f3-b10a-acf42d5e6ecc', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
+            set('Server Instance', '11ca0e0e-617d-45f3-b10a-acf42d5e6ecc', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
           ].each do |s|
-            create! s.merge!(type: 'JellyfishDemo::ProductType::S3')
+            create! s.merge!(type: 'JellyfishDemo::ProductType::Server')
           end
         end
       end
 
       def description
-        'Amazon Web Services Scalable Cloud Storage Instance'
+        'Server Instance'
       end
 
       def tags
-        ['s3', 'storage', 'cdn']
+        ['compute', 'server']
       end
 
       def product_questions
@@ -34,7 +34,7 @@ module JellyfishDemo
       end
 
       def service_class
-        'JellyfishDemo::Service::S3'.constantize
+        'JellyfishDemo::Service::Server'.constantize
       end
     end
   end
