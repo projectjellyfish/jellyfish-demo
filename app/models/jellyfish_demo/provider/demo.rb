@@ -1,9 +1,9 @@
 module JellyfishDemo
   module Provider
     class Demo < ::Provider
-      def s3_client
+      def client
         @s3_client ||= begin
-          Fog::Storage.new credentials
+          MockClient.new credentials
         end
       end
 
@@ -18,6 +18,12 @@ module JellyfishDemo
             region: settings[:region]
           }
         end
+      end
+    end
+    class MockClient
+      attr_accessor :credentials
+      def initialize(credentials)
+        @credentials = credentials
       end
     end
   end

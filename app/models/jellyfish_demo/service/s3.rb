@@ -8,7 +8,6 @@ module JellyfishDemo
 
       def deprovision
         handle_errors do
-          client.delete_bucket(get_output('instance_id').value)
           update_status(::Service.defined_enums['status']['terminated'], 'terminated')
         end
       end
@@ -25,14 +24,11 @@ module JellyfishDemo
               :allocated_storage => self.product.answers.find { |x| x.name == 'allocated_storage' }.value,
           }
 
-          # create the s3 bucket
-          storage = client.directories.create(key: storage_name)
-
           # save db outputs from product details
           save_outputs(details, [ ['Storage', :allocated_storage]], ValueTypes::TYPES[:string]) if defined? details
 
           # save outputs from provisioning
-          save_outputs({ key: storage.key }, [ [ 'instance_id', :key ] ], ValueTypes::TYPES[:string]) if defined? storage
+          save_outputs({ key: storage_name }, [ [ 'instance_id', :key ] ], ValueTypes::TYPES[:string]) if defined? storage
 
           # update status of service to running
           update_status(::Service.defined_enums['status']['running'], 'running')
@@ -68,7 +64,7 @@ module JellyfishDemo
 
       def client
         @client ||= begin
-          self.provider.s3_client
+          self.provider.client
         end
       end
     end
