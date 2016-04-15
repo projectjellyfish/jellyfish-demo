@@ -1,14 +1,14 @@
-def sample_data(file)
-  puts "-- Loading #{file.titlecase}"
-  data = YAML.load_file(File.join [Rails.root, 'db', 'data', 'sample', [file, 'yml'].join('.')])
-  return data unless block_given?
-  data.each { |d| yield d }
-end
-
 namespace :setup do
   desc 'Sets up simple dataset'
   task simple: :environment do
-    sample_data('organizations').map do |data|
+    def simple_data(file)
+      puts "-- Loading #{file.titlecase}"
+      data = YAML.load_file(File.join([File.dirname(File.dirname(__FILE__)), 'assets', 'sample', [file, 'yml'].join('.')]))
+      return data unless block_given?
+      data.each { |d| yield d }
+    end
+
+    simple_data('organizations').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['name']}"
       [data.delete('_assoc'), Organization.create(data).tap do |org|
@@ -16,7 +16,7 @@ namespace :setup do
       end]
     end
 
-    users = sample_data('staff').map do |data|
+    users = simple_data('staff').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['first_name']} #{data['last_name']}"
       [data.delete('_assoc'), Staff.create(data).tap do |user|
@@ -24,17 +24,17 @@ namespace :setup do
       end]
     end
 
-    sample_data('product_categories').map do |data|
+    simple_data('product_categories').map do |data|
       puts "  #{data['name']}"
       [data.delete('_assoc'), ProductCategory.create(data)]
     end
 
-    sample_data('project_questions').map do |data|
+    simple_data('project_questions').map do |data|
       puts "  #{data['question']}"
       [data.delete('_assoc'), ProjectQuestion.create(data)]
     end
 
-    sample_data('demo_projects').map do |data|
+    simple_data('demo_projects').map do |data|
       approvals = data.delete 'approvals'
       alerts = data.delete 'alerts'
       answers = data.delete 'answers'
@@ -61,6 +61,13 @@ namespace :setup do
 
   desc 'Generates demo data'
   task demo: :environment do
+    def sample_data(file)
+      puts "-- Loading #{file.titlecase}"
+      data = YAML.load_file(File.join([File.dirname(File.dirname(__FILE__)), 'assets', 'sample', [file, 'yml'].join('.')]))
+      return data unless block_given?
+      data.each { |d| yield d }
+    end
+
     # generate provider data from demo registered provider
     provider_data = {
         'type'=>'JellyfishDemo::Provider::Demo',
@@ -71,6 +78,10 @@ namespace :setup do
         'tag_list'=>['demo']
     }
     providers = [['demo', Provider.create(provider_data)]]
+
+    file = 'clouds'
+    puts File.join([File.dirname(File.dirname(__FILE__)), 'assets', 'sample', [file, 'yml'].join('.')])
+    puts File.exists?(File.join([File.dirname(File.dirname(__FILE__)), 'assets', 'sample', [file, 'yml'].join('.')]))
 
     orgs = sample_data('organizations').map do |data|
       alerts = data.delete 'alerts'

@@ -1,0 +1,16 @@
+---
+- _assoc: mobile
+  name: Widgets Co Mobile API
+  description: Collections of services for running the Widgets Co. mobile API services
+  budget: 5000.0
+  monthly_budget: 5000.0
+  start_date: 2015-02-06
+  end_date: 2015-11-06
+  img: projects/icon-mobile-orange.png
+  spent: 2000.0
+  health: ok
+  status: approved
+  approvals:
+    - staff: admin
+      approved: true
+      reason:
