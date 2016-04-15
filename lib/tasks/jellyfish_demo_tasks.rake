@@ -74,16 +74,16 @@ namespace :setup do
 
     # generate provider data from demo registered provider
     provider_data = {
-        'type'=>'JellyfishDemo::Provider::Demo',
-        'registered_provider'=>RegisteredProvider.where(name: 'Demo').first,
-        'name'=>'Demo Provider',
-        'description'=>'Provider for the Demo',
-        'active'=>true,
-        'tag_list'=>['demo']
+      'type' => 'JellyfishDemo::Provider::Demo',
+      'registered_provider' => RegisteredProvider.where(name: 'Demo').first,
+      'name' => 'Demo Provider',
+      'description' => 'Provider for the Demo',
+      'active' => true,
+      'tag_list' => ['demo']
     }
     providers = [['demo', Provider.create(provider_data)]]
 
-    orgs = sample_data('organizations').map do |data|
+    sample_data('organizations').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['name']}"
       [data.delete('_assoc'), Organization.create(data).tap do |org|
@@ -103,7 +103,7 @@ namespace :setup do
       end
     end
 
-    categories = sample_data('product_categories').map do |data|
+    sample_data('product_categories').map do |data|
       puts "  #{data['name']}"
       [data.delete('_assoc'), ProductCategory.create(data)]
     end
@@ -154,8 +154,8 @@ namespace :setup do
       @hourly_price = 0
       @monthly_price = 0
 
-      productList = data.delete 'products'
-      services = productList.map do |orderProduct|
+      product_list = data.delete 'products'
+      services = product_list.map do |orderProduct|
         product = products.assoc(orderProduct.delete('product'))
         product = product.last
 
@@ -172,11 +172,11 @@ namespace :setup do
       end
 
       order_params = {
-          staff: users.assoc(data.delete('staff')).last,
-          project: projects.assoc(data.delete('project')).last,
-          setup_price: @setup_price,
-          hourly_price: @hourly_price,
-          monthly_price: @monthly_price
+        staff: users.assoc(data.delete('staff')).last,
+        project: projects.assoc(data.delete('project')).last,
+        setup_price: @setup_price,
+        hourly_price: @hourly_price,
+        monthly_price: @monthly_price
       }
       order = Order.create(order_params)
 

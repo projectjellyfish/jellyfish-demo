@@ -18,7 +18,7 @@ module JellyfishDemo
       end
 
       def tags
-        ['compute', 'server']
+        %w(compute server)
       end
 
       def product_questions

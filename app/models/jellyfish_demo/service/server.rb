@@ -13,7 +13,6 @@ module JellyfishDemo
       end
 
       def provision
-        storage = nil
         handle_errors do
           # TODO: generate service outputs
           # details = {
@@ -32,20 +31,20 @@ module JellyfishDemo
       def update_status(status, status_msg)
         self.status = status
         self.status_msg = status_msg
-        self.save
+        save
       end
 
       def save_outputs(source, outputs_to_save, output_value_type)
         outputs_to_save.each do |output_name, source_key|
           next unless defined? source[source_key]
-          service = get_output(output_name) || self.service_outputs.new(name: output_name)
+          service = get_output(output_name) || service_outputs.new(name: output_name)
           service.update_attributes(value: source[source_key], value_type: output_value_type) unless service.nil?
           service.save
         end
       end
 
       def get_output(name)
-        self.service_outputs.where(name: name).first
+        service_outputs.where(name: name).first
       end
 
       def handle_errors
@@ -56,7 +55,7 @@ module JellyfishDemo
 
       def client
         @client ||= begin
-          self.provider.client
+          provider.client
         end
       end
     end
