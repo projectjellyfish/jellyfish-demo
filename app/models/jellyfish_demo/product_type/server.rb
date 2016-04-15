@@ -6,7 +6,7 @@ module JellyfishDemo
 
         transaction do
           [
-            set('Server Instance', '11ca0e0e-617d-45f3-b10a-acf42d5e6ecc', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
+            set('Demo Instance', '11ca0e0e-617d-45f3-b10a-acf42d5e6ecc', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
           ].each do |s|
             create! s.merge!(type: 'JellyfishDemo::ProductType::Server')
           end
@@ -14,7 +14,7 @@ module JellyfishDemo
       end
 
       def description
-        'Server Instance'
+        'Demo Instance'
       end
 
       def tags
