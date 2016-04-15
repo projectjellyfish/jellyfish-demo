@@ -15,15 +15,13 @@ module JellyfishDemo
       def provision
         storage = nil
         handle_errors do
-          # generate service outputs
-          details = {
-              :allocated_storage => self.product.answers.find { |x| x.name == 'allocated_storage' }.value,
-              :key => "id-#{SecureRandom.hex(10)}"
-          }
-
+          # TODO: generate service outputs
+          # details = {
+          #     :allocated_storage => self.product.answers.find { |x| x.name == 'allocated_storage' }.value,
+          #     :key => "id-#{SecureRandom.hex(10)}"
+          # }
           # save db outputs from product details
-          save_outputs(details, [['Storage', :allocated_storage], [ 'instance_id', :key ]], ValueTypes::TYPES[:string]) if defined? details
-
+          # save_outputs(details, [['Storage', :allocated_storage], [ 'instance_id', :key ]], ValueTypes::TYPES[:string]) if defined? details
           # update status of service to running
           update_status(::Service.defined_enums['status']['running'], 'running')
         end
