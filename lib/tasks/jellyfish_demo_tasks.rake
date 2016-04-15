@@ -19,9 +19,13 @@ namespace :setup do
     users = simple_data('staff').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['first_name']} #{data['last_name']}"
-      [data.delete('_assoc'), Staff.create(data).tap do |user|
-        user.alerts.create(alerts) unless alerts.nil?
-      end]
+      if Staff.where(email: data['email']).exists?
+        [data.delete('_assoc'), Staff.where(email: data['email']).first]
+      else
+        [data.delete('_assoc'), Staff.create(data).tap do |user|
+          user.alerts.create(alerts) unless alerts.nil?
+        end]
+      end
     end
 
     simple_data('product_categories').map do |data|
@@ -79,10 +83,6 @@ namespace :setup do
     }
     providers = [['demo', Provider.create(provider_data)]]
 
-    file = 'clouds'
-    puts File.join([File.dirname(File.dirname(__FILE__)), 'assets', 'sample', [file, 'yml'].join('.')])
-    puts File.exists?(File.join([File.dirname(File.dirname(__FILE__)), 'assets', 'sample', [file, 'yml'].join('.')]))
-
     orgs = sample_data('organizations').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['name']}"
@@ -94,9 +94,13 @@ namespace :setup do
     users = sample_data('staff').map do |data|
       alerts = data.delete 'alerts'
       puts "  #{data['first_name']} #{data['last_name']}"
-      [data.delete('_assoc'), Staff.create(data).tap do |user|
-        user.alerts.create(alerts) unless alerts.nil?
-      end]
+      if Staff.where(email: data['email']).exists?
+        [data.delete('_assoc'), Staff.where(email: data['email']).first]
+      else
+        [data.delete('_assoc'), Staff.create(data).tap do |user|
+          user.alerts.create(alerts) unless alerts.nil?
+        end]
+      end
     end
 
     categories = sample_data('product_categories').map do |data|
