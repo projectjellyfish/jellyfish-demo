@@ -6,7 +6,7 @@
 
   /** @ngInject */
   function initFields(Forms) {
-    Forms.fields('aws_regions', {
+    Forms.fields('regions', {
       type: 'select',
       templateOptions: {
         label: 'Region',
@@ -24,14 +24,26 @@
       }
     });
 
-    Forms.fields('regions', {
+    Forms.fields('instance_sizes', {
       type: 'select',
       templateOptions: {
-        label: 'Region',
+        label: 'Instance Size',
         options: [
-          {label: 'N. California (US-West-1)', value: 'us-west-1', group: 'US'},
-          {label: 'N. Virginia (US-East-1)', value: 'us-east-1', group: 'US'},
-          {label: 'Oregon (US-West-2)', value: 'us-west-2', group: 'US'}
+          {label: 'Small', value: 'small'},
+          {label: 'Medium', value: 'medium'},
+          {label: 'Large', value: 'large'}
+        ]
+      }
+    });
+
+    Forms.fields('environments', {
+      type: 'select',
+      templateOptions: {
+        label: 'Environment',
+        options: [
+          {label: 'Development', value: 'develop'},
+          {label: 'Test', value: 'test'},
+          {label: 'Production', value: 'prod'}
         ]
       }
     });

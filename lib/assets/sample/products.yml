@@ -11,7 +11,7 @@
   name: AWS Small EC2
   description: t2.small compute instance
   img: products/aws_ec2.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 5.99
@@ -41,7 +41,7 @@
   name: AWS Medium EC2
   description: t2.medium compute instance
   img: products/aws_ec2.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 10.99
@@ -71,7 +71,7 @@
   name: AWS Large EC2
   description: t2.large compute instance
   img: products/aws_ec2.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -101,7 +101,7 @@
   name: RHEL 7 Small
   description: A small server running RHEL
   img: products/redhat.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -131,7 +131,7 @@
   name: RHEL 6 Medium
   description: A medium capacity server running RHEL
   img: products/redhat.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 10.99
@@ -161,7 +161,7 @@
   name: RHEL 6 Large
   description: A large production capable server running RHEL
   img: products/redhat.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -191,7 +191,7 @@
   name: Windows Server 2012
   description: Windows Server 2012 R2 Datacenter
   img: products/windows.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -231,7 +231,7 @@
   name: Small MySQL
   description: A small development level instance of MySQL
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -258,7 +258,7 @@
   name: Medium MySQL
   description: A medium development level instance of MySQL
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -285,7 +285,7 @@
   name: Large MySQL
   description: A large production capable instance of MySQL
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -312,7 +312,7 @@
   name: Small PostgreSQL
   description: A small development level instance of PostgreSQL
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -339,7 +339,7 @@
   name: Medium PostgreSQL
   description: A medium development level instance of PostgreSQL
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -366,7 +366,7 @@
   name: Large PostgreSQL
   description: A large production capable instance of PostgreSQL
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -393,7 +393,7 @@
   name: Medium Aurora
   description: A medium development level instance of Aurora
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -420,7 +420,7 @@
   name: Large Aurora
   description: A large production capable instance of Aurora
   img: products/aws_rds.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -447,7 +447,7 @@
   name: Medium Sql Server
   description: A medium development level instance of Sql Server
   img: products/mssql.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -468,7 +468,7 @@
   name: Large Sql Server
   description: A large production capable instance of Sql Server
   img: products/mssql.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -494,7 +494,7 @@
   name: 1gb NetApps Storage
   description: Gigabyte of NetApps storage
   img: products/netapp.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -515,7 +515,7 @@
   name: AWS S3 Bucket
   description: AWS bucket storage
   img: products/aws_s3.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -536,7 +536,7 @@
   name: Teradata
   description: Teradata
   img: products/teradata.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -566,7 +566,7 @@
   name: LAMP Stack
   description: A server running Linux, Apache, MySQL, and PHP.
   img: products/php.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -602,7 +602,7 @@
   name: Rails Stack
   description: A server running Linux, Apache, Postgresql, and Ruby.
   img: products/rails.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -641,7 +641,7 @@
   name: MEAN Stack
   description: A server running Linux, Apache, MongoDB, and Node.Js
   img: products/mean.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -681,7 +681,7 @@
   name: NCI Stack
   description: A server running Windows 2008, IIS, MS-SQL, Ant Hill Pro
   img: products/windows.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -715,7 +715,7 @@
   name: Drupal CMS Stack - Basic ACQUIA
   description: A server running CentOS, Drupal, MySQL and managed by Acquia.
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -748,7 +748,7 @@
   name: Drupal CMS Stack - Basic AWS
   description: An EC2 instance running CentOS, Drupal, MySQL
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -784,7 +784,7 @@
   name: Drupal CMS Stack - Basic On-Site
   description: An onsite instance running CentOS, Drupal, MySQL
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -820,7 +820,7 @@
   name: Drupal CMS Stack - High Availability AWS
   description: An EC2 instance running CentOS, Drupal, MySQL
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -860,7 +860,7 @@
   name: Indexing Stack
   description: A server running CentOS, Elasticsearch, Apache Nutch
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -894,7 +894,7 @@
   name: Data Analysis Stack
   description: A server running CentOS, Java 8, R statistical software, Python, MongoDB
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -927,7 +927,7 @@
   name: Data Analysis Stack
   description: An EC2 instance running CentOS, Java 8, R statistical software, Python, MongoDB
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -964,7 +964,7 @@
   name: NBIA Server Stack
   description: A server running  CentOS 6.5, JBOSS 5.1, NBIA version 6.2, MySQL 5.1, Java 1.6.0 update 33
   img: products/centos.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -1000,7 +1000,7 @@
   name: JIRA
   description: An installation of JIRA Project management software
   img: products/jira.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -1030,7 +1030,7 @@
   name: Confluence
   description: An installation of Confluence wiki software
   img: products/confluence.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -1060,7 +1060,7 @@
   name: Bugzilla
   description: An installation of Bugzilla bug tracking software
   img: products/bugzilla.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -1090,7 +1090,7 @@
   name: Apache Web Server
   description: An installation of Apache with PHP support
   img: products/jira.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -1120,7 +1120,7 @@
   name: MS Exchange Server
   description: An installation of Microsoft Exchange Server
   img: products/exchange.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 30.00
@@ -1164,7 +1164,7 @@
   name: Sr. Java Developer
   description: Additional staffing request for a Java developer
   img: products/woman.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 5000.00
@@ -1175,7 +1175,7 @@
   name: Sr. System Administrator
   description: Additional staffing request for a System Administrator
   img: products/man.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 5000.00
@@ -1186,7 +1186,7 @@
   name: Project Manager
   description: Additional staffing request for a System Administrator
   img: products/woman.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 4000.00
@@ -1197,7 +1197,7 @@
   name: 100 Node Hadoop Cluster
   description: 100 nodes of processing power
   img: products/hadoop.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.00
@@ -1215,7 +1215,7 @@
   name: 10 Node Hadoop Cluster
   description: 10 nodes of processing power
   img: products/hadoop.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 5.00
@@ -1233,7 +1233,7 @@
   name: Pilot Genomic Analysis
   description: 100 Node Hadoop Cluster (64GB/node), CentOS, MongoDB, 10TB storage,  JAVA JRE, Eclipse
   img: products/hadoop.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 20.99
@@ -1263,7 +1263,7 @@
   name: Monte Carlo
   description: Monte Carlo Simulation
   img: products/algorithm.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -1274,7 +1274,7 @@
   name: Gemone Modeling
   description: 3D Genomic Modeling
   img: products/algorithm.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -1285,7 +1285,7 @@
   name: Neural Network
   description: Neural Network Modeling
   img: products/algorithm.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -1296,7 +1296,7 @@
   name: Satellite Data
   description: Satellite Data from Eastern Hemisphere
   img: products/dataset.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -1307,7 +1307,7 @@
   name: Air Traffic Logs
   description: Air Traffic Controller Logs
   img: products/dataset.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 0.00
@@ -1318,7 +1318,7 @@
   name: Human Genome
   description: Sequenced Human Genome
   img: products/dataset.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 10.00
@@ -1329,7 +1329,7 @@
   name: Ebola Genome
   description: Ebola Virus Genome
   img: products/dataset.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 10.00
@@ -1340,7 +1340,7 @@
   name: Anthrax Genome
   description: Bacillus Anthracis Genome
   img: products/dataset.png
-  product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
   setup_price: 10.00
