@@ -77,7 +77,7 @@ namespace :setup do
       'type' => 'JellyfishDemo::Provider::Demo',
       'registered_provider' => RegisteredProvider.where(name: 'Demo').first,
       'name' => 'Demo Provider',
-      'description' => 'Provider for the Demo',
+      'description' => 'Demo Services',
       'active' => true,
       'tag_list' => ['demo']
     }
