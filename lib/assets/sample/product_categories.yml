@@ -1,4 +1,8 @@
 ---
+- _assoc: Demo
+  name: Demo
+  description: Demo services and resources
+  tag_list: [demo]
 - _assoc: compute
   name: Compute
   description: Compute and server resources
