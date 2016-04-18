@@ -12,9 +12,9 @@ module JellyfishDemo
       def credentials
         @credentials ||= begin
           {
-            provider: 'AWS',
-            aws_access_key_id: settings[:access_id],
-            aws_secret_access_key: settings[:secret_key],
+            provider: 'Demo',
+            access_key_id: settings[:access_id],
+            secret_access_key: settings[:secret_key],
             region: settings[:region]
           }
         end

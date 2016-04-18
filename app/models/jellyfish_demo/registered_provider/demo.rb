@@ -27,7 +27,7 @@ module JellyfishDemo
         [
           { name: :access_id, value_type: :string, field: :text, label: 'Access ID', required: true },
           { name: :secret_key, value_type: :password, field: :password, label: 'Secret Key', required: :if_new },
-          { name: :region, value_type: :string, field: :aws_regions, required: true }
+          { name: :region, value_type: :string, field: :regions, required: true }
         ]
       end
     end
