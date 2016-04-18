@@ -23,8 +23,9 @@ module JellyfishDemo
 
       def product_questions
         [
-          { name: :allocated_storage, value_type: :string, field: :text, label: 'Allocated Storage', required: true },
-          { name: :region, value_type: :string, field: :regions, required: true }
+          { name: :allocated_storage, value_type: :string, field: :text, label: 'Allocated Storage (GB)', required: true },
+          { name: :instance_size, value_type: :string, field: :instance_sizes, required: true },
+          { name: :environment, value_type: :string, field: :environments, required: true }
         ]
       end
 
