@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
   s.license     = 'APACHE'
   s.files       = Dir['{app,config,db,lib}/**/*', 'LICENSE', 'Rakefile', 'README.md']
   s.add_dependency 'rails'
+  s.add_dependency 'faker'
 end
