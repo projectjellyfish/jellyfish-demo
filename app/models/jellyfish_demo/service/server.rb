@@ -14,13 +14,21 @@ module JellyfishDemo
 
       def provision
         handle_errors do
-          # TODO: generate service outputs
-          # details = {
-          #     :allocated_storage => self.product.answers.find { |x| x.name == 'allocated_storage' }.value,
-          #     :key => "id-#{SecureRandom.hex(10)}"
-          # }
+
+          # generate mock provisioning details with faker
+          details = {
+              :domain => Faker::Internet.domain_name,
+              :ip_address => Faker::Internet.public_ip_v4_address,
+              :username => 'admin',
+              :password => Faker::Internet.password(10)
+          }
+
           # save db outputs from product details
-          # save_outputs(details, [['Storage', :allocated_storage], [ 'instance_id', :key ]], ValueTypes::TYPES[:string]) if defined? details
+          save_outputs(details, [[ 'Domain', :domain ],
+                                 [ 'Public IP', :ip_address ],
+                                 [ 'Username', :username ],
+                                 [ 'Password', :password ]], ValueTypes::TYPES[:string])
+
           # update status of service to running
           update_status(::Service.defined_enums['status']['running'], 'running')
         end
