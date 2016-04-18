@@ -14,20 +14,19 @@ module JellyfishDemo
 
       def provision
         handle_errors do
-
           # generate mock provisioning details with faker
           details = {
-              :domain => Faker::Internet.domain_name,
-              :ip_address => Faker::Internet.public_ip_v4_address,
-              :username => 'admin',
-              :password => Faker::Internet.password(10)
+            domain: Faker::Internet.domain_name,
+            ip_address: Faker::Internet.public_ip_v4_address,
+            username: 'admin',
+            password: Faker::Internet.password(10)
           }
 
           # save db outputs from product details
-          save_outputs(details, [[ 'Domain', :domain ],
-                                 [ 'Public IP', :ip_address ],
-                                 [ 'Username', :username ],
-                                 [ 'Password', :password ]], ValueTypes::TYPES[:string])
+          save_outputs(details, [['Domain', :domain],
+                                 ['Public IP', :ip_address],
+                                 ['Username', :username],
+                                 ['Password', :password]], ValueTypes::TYPES[:string])
 
           # update status of service to running
           update_status(::Service.defined_enums['status']['running'], 'running')
