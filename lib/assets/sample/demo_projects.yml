@@ -10,6 +10,10 @@
   spent: 4000.0
   health: ok
   status: approved
+  alerts:
+    - status: warning
+      message: Project audit scheduled in 7 days.
+      category: Compliance
   approvals:
     - staff: admin
       approved: true
@@ -35,7 +39,7 @@
   approvals:
     - staff: admin
       approved: false
-      reason: Budget was reallocated.
+      reason: Budget rescinded.
   answers:
     - question: critical
       value: 'Yes'
@@ -45,7 +49,7 @@
       value: Private
 - _assoc: cloud
   name: Cloud Prototype
-  description: Demo Wiki and Services
+  description: Cloud Prototype and Services
   budget: 50000.0
   monthly_budget: 2000.0
   start_date: 2015-02-06
