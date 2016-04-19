@@ -24,8 +24,8 @@
 - _assoc: wiki
   name: Internal Wiki
   description: Demo Wiki and Services
-  budget: 30000.0
-  monthly_budget: 30000.0
+  budget: 3000.0
+  monthly_budget: 200.0
   start_date: 2015-02-06
   end_date: 2015-11-06
   img: projects/documentation.png
@@ -35,10 +35,28 @@
   approvals:
     - staff: admin
       approved: false
-      reason: Data not delivered on time.
+      reason: Budget was reallocated.
   answers:
     - question: critical
       value: 'Yes'
+    - question: cc
+      value: GSM-4873849128497761
+    - question: deployment
+      value: Private
+- _assoc: cloud
+  name: Cloud Prototype
+  description: Demo Wiki and Services
+  budget: 50000.0
+  monthly_budget: 2000.0
+  start_date: 2015-02-06
+  end_date: 2015-11-06
+  img: projects/cloud-checkmark-128.png
+  spent: 0
+  health: ok
+  status: undecided
+  answers:
+    - question: critical
+      value: 'No'
     - question: cc
       value: GSM-4873849128497761
     - question: deployment
