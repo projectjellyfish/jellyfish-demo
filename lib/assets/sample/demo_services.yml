@@ -1,0 +1,60 @@
+---
+- name: API Application Server
+  staff: admin
+  project: mobile
+  products:
+    - _assoc: mobile_ec2
+      product: ec2
+      type: JellyfishDemo::Service::Server
+      name: API Application Server
+      health: ok
+      status: running
+      status_msg: running
+      service_outputs:
+          - name: Domain
+            value: ec2-52-5-45-185.compute-1.amazonaws.com
+            value_type: string
+          - name: Public IP
+            value: 52.5.45.185
+            value_type: string
+          - name: Username
+            value: ec2-user
+            value_type: string
+          - name: Password
+            value: 7hEaUb2fF4ShTuGw7xSt
+            value_type: string
+    - _assoc: mobile_rds
+      product: rds
+      type: JellyfishDemo::Service::SQL
+      name: API MySQL RDS Database
+      health: ok
+      status: running
+      status_msg: running
+      service_outputs:
+          - name: Database
+            value: id-dada61543c
+            value_type: string
+          - name: Username
+            value: root
+            value_type: string
+          - name: Password
+            value: Z288MeXaAbIyEyEgJ47z
+            value_type: string
+
+#    - _assoc: mobile_small_2
+#      product: small_ec2
+#      type: JellyfishDemo::Service::Server
+#      name: Job Queue
+#      health: ok
+#      status: running
+#      status_msg: running
+#      service_outputs:
+#        - name: Public IP
+#          value: 44.44.0.12
+#          value_type: string
+#        - name: Username
+#          value: Admin
+#          value_type: string
+#        - name: Password
+#          value: admin1234!@#$
+#          value_type: string

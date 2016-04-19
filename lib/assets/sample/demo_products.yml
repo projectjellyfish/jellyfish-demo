@@ -85,7 +85,7 @@
       value: Development
       value_type: string
 ## Databases
-- _assoc: mysql
+- _assoc: rds
   name: RDS
   description: An AWS MySQL Instance
   img: products/aws_rds.png
