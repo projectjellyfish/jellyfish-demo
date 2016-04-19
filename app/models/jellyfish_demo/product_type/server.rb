@@ -23,8 +23,10 @@ module JellyfishDemo
 
       def product_questions
         [
-          { name: :allocated_storage, value_type: :string, field: :text, label: 'Allocated Storage (GB)', required: true },
-          { name: :instance_size, value_type: :string, field: :instance_sizes, required: true },
+          { name: :cpus, value_type: :string, field: :cpus, required: true },
+          { name: :memory, value_type: :string, field: :memory, required: true },
+          { name: :disk_size, value_type: :string, field: :text, label: 'Disk Size (GB)', required: true },
+          { name: :operating_system, value_type: :string, field: :operating_systems, required: true },
           { name: :environment, value_type: :string, field: :environments, required: true }
         ]
       end

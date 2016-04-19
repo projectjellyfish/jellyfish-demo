@@ -36,6 +36,44 @@
       }
     });
 
+    Forms.fields('cpus', {
+      type: 'select',
+      templateOptions: {
+        label: 'CPUs',
+        options: [
+          {label: '1', value: '1'},
+          {label: '2', value: '2'},
+          {label: '3', value: '3'},
+          {label: '4', value: '4'},
+        ]
+      }
+    });
+
+    Forms.fields('memory', {
+      type: 'select',
+      templateOptions: {
+        label: 'Memory',
+        options: [
+          {label: '4 GB', value: '4'},
+          {label: '8 GB', value: '8'},
+          {label: '16 GB', value: '16'}
+        ]
+      }
+    });
+
+    Forms.fields('operating_systems', {
+      type: 'select',
+      templateOptions: {
+        label: 'Operating System',
+        options: [
+          {label: 'Amazon Linux', value: 'Amazon Linux'},
+          {label: 'RHEL 7', value: 'RHEL 7.1'},
+          {label: 'Centos 7', value: 'Centos 7.1'},
+          {label: 'Windows', value: 'Windows'},
+        ]
+      }
+    });
+
     Forms.fields('environments', {
       type: 'select',
       templateOptions: {
