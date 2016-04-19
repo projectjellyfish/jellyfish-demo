@@ -56,34 +56,34 @@ namespace :setup do
       end]
     end
 
-    simple_data('demo_project_questions').map do |data|
+    project_questions = simple_data('demo_project_questions').map do |data|
       puts "  #{data['question']}"
       [data.delete('_assoc'), ProjectQuestion.create(data)]
     end
 
-    # simple_data('demo_projects').map do |data|
-    #   approvals = data.delete 'approvals'
-    #   alerts = data.delete 'alerts'
-    #   answers = data.delete 'answers'
-    #   puts "  #{data['name']}"
-    #   [data.delete('_assoc'), Project.create(data).tap do |project|
-    #     project.alerts.create(alerts) unless alerts.nil?
-    #     unless approvals.nil?
-    #       approvals = approvals.map do |approval|
-    #         user = users.assoc(approval.delete('staff')).last
-    #         approval.merge(staff: user)
-    #       end
-    #       project.approvals.create approvals
-    #     end
-    #     unless answers.nil?
-    #       answers = answers.map do |answer|
-    #         question = project_questions.assoc(answer.delete('question')).last
-    #         answer.merge name: question['uuid'], value_type: 'string'
-    #       end
-    #       project.answers.create answers
-    #     end
-    #   end]
-    # end
+    simple_data('demo_projects').map do |data|
+      approvals = data.delete 'approvals'
+      alerts = data.delete 'alerts'
+      answers = data.delete 'answers'
+      puts "  #{data['name']}"
+      [data.delete('_assoc'), Project.create(data).tap do |project|
+        project.alerts.create(alerts) unless alerts.nil?
+        unless approvals.nil?
+          approvals = approvals.map do |approval|
+            user = users.assoc(approval.delete('staff')).last
+            approval.merge(staff: user)
+          end
+          project.approvals.create approvals
+        end
+        unless answers.nil?
+          answers = answers.map do |answer|
+            question = project_questions.assoc(answer.delete('question')).last
+            answer.merge name: question['uuid'], value_type: 'string'
+          end
+          project.answers.create answers
+        end
+      end]
+    end
   end
 
   desc 'Generates demo data'

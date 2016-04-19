@@ -1,7 +1,7 @@
 ---
 - _assoc: critical
-  question: Business Critical
-  required: false
+  question: Business Critical?
+  required: true
   options: []
   field_type: 0
 - _assoc: deployment

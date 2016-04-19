@@ -28,7 +28,7 @@
       value: 100
       value_type: integer
     - name: environment
-      value: prod
+      value: Production
       value_type: string
 - _assoc: rhel
   name: RHEL 7
@@ -55,7 +55,7 @@
       value: 200
       value_type: integer
     - name: environment
-      value: test
+      value: Test
       value_type: string
 - _assoc: centos
   name: Centos 7
@@ -82,7 +82,8 @@
       value: 150
       value_type: integer
     - name: environment
-      value: develop
+      value: Development
+      value_type: string
 ## Databases
 - _assoc: mysql
   name: RDS
