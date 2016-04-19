@@ -128,6 +128,13 @@ namespace :setup do
         service.last.save
       end
     end
+
+    # Add wizard questions
+    simple_data 'demo_wizard_questions' do |data|
+      answers = data.delete 'answers'
+      puts "  #{data['text']}"
+      [data.delete('_assoc'), WizardQuestion.create(data).tap { |q| q.wizard_answers.create answers }]
+    end
   end
 
   desc 'Generates demo data'
