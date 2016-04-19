@@ -83,6 +83,81 @@
       value_type: integer
     - name: environment
       value: develop
+## Databases
+- _assoc: mysql
+  name: RDS
+  description: An AWS MySQL Instance
+  img: products/aws_rds.png
+  product_type: 75b08da2-1f55-4b4e-84bc-b8c76a7d8f04
+  provider: demo
+  active: true
+  setup_price: 9.99
+  monthly_price: 0.00
+  hourly_price: 0.33
+  tag_list: [database, aws, public, mysql, rds]
+  answers:
+    - name: engine
+      value: MySQL
+      value_type: string
+    - name: instance_size
+      value: db.m3.medium
+      value_type: string
+    - name: disk_size
+      value: 100
+      value_type: integer
+    - name: backup
+      value: None
+      value_type: string
+    - name: environment
+      value: Development
+      value_type: string
+- _assoc: mssql
+  name: SQL Server
+  description: A MS SQL Server Instance
+  img: products/mssql.png
+  product_type: 75b08da2-1f55-4b4e-84bc-b8c76a7d8f04
+  provider: demo
+  active: true
+  setup_price: 14.99
+  monthly_price: 0.00
+  hourly_price: 0.68
+  tag_list: [database, aws, public, mysql, rds]
+  answers:
+    - name: engine
+      value: MS SQL Server
+      value_type: string
+    - name: disk_size
+      value: 120
+      value_type: integer
+    - name: Monthly
+      value: None
+      value_type: string
+    - name: environment
+      value: Test
+      value_type: string
+- _assoc: teradata
+  name: Teradata
+  description: A Teradata Instance
+  img: products/teradata.png
+  product_type: 75b08da2-1f55-4b4e-84bc-b8c76a7d8f04
+  provider: demo
+  active: true
+  setup_price: 49.99
+  monthly_price: 0.00
+  hourly_price: 0.95
+  tag_list: [database, teradata, semantic]
+  answers:
+    - name: engine
+      value: Teradata
+      value_type: string
+    - name: disk_size
+      value: 250
+      value_type: integer
+    - name: backup
+      value: Weekly
+      value_type: string
+    - name: environment
+      value: Production
       value_type: string
 
 #- _assoc: win_2012

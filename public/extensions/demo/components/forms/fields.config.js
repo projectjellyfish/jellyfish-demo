@@ -74,14 +74,40 @@
       }
     });
 
+    Forms.fields('engines', {
+      type: 'select',
+      templateOptions: {
+        label: 'Engine',
+        options: [
+          {label: 'MySQL', value: 'MySQL'},
+          {label: 'Postgres', value: 'Postgres'},
+          {label: 'Microsoft SQL Server', value: 'Microsoft SQL Server'},
+          {label: 'Teradata', value: 'Teradata'}
+        ]
+      }
+    });
+
+    Forms.fields('backups', {
+      type: 'select',
+      templateOptions: {
+        label: 'Backup',
+        options: [
+          {label: 'None', value: 'None'},
+          {label: 'Nightly', value: 'Nightly'},
+          {label: 'Weekly', value: 'Weekly'},
+          {label: 'Monthly', value: 'Monthly'}
+        ]
+      }
+    });
+
     Forms.fields('environments', {
       type: 'select',
       templateOptions: {
         label: 'Environment',
         options: [
-          {label: 'Development', value: 'develop'},
-          {label: 'Test', value: 'test'},
-          {label: 'Production', value: 'prod'}
+          {label: 'Development', value: 'Development'},
+          {label: 'Test', value: 'Test'},
+          {label: 'Production', value: 'Production'}
         ]
       }
     });
