@@ -10,12 +10,12 @@ namespace :setup do
 
     # Add Provider from demo registered provider loaded by Rails
     provider_data = {
-        'type' => 'JellyfishDemo::Provider::Demo',
-        'registered_provider' => RegisteredProvider.where(name: 'Demo').first,
-        'name' => 'Demo Provider',
-        'description' => 'Demo Services',
-        'active' => true,
-        'tag_list' => ['demo']
+      'type' => 'JellyfishDemo::Provider::Demo',
+      'registered_provider' => RegisteredProvider.where(name: 'Demo').first,
+      'name' => 'Demo Provider',
+      'description' => 'Demo Services',
+      'active' => true,
+      'tag_list' => ['demo']
     }
     providers = [['demo', Provider.create(provider_data)]]
 
@@ -115,11 +115,11 @@ namespace :setup do
       end
       # Create Order
       order_params = {
-          staff: order_staff,
-          project: order_project,
-          setup_price: @setup_price,
-          hourly_price: @hourly_price,
-          monthly_price: @monthly_price
+        staff: order_staff,
+        project: order_project,
+        setup_price: @setup_price,
+        hourly_price: @hourly_price,
+        monthly_price: @monthly_price
       }
       order = Order.create(order_params)
       # Save created Services with Order ID
@@ -128,7 +128,6 @@ namespace :setup do
         service.last.save
       end
     end
-
   end
 
   desc 'Generates demo data'
