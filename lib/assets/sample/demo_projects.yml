@@ -21,3 +21,25 @@
       value: Hybrid
     - question: cc
       value: GSM-4873849128497761
+- _assoc: wiki
+  name: Internal Wiki
+  description: Demo Wiki and Services
+  budget: 30000.0
+  monthly_budget: 30000.0
+  start_date: 2015-02-06
+  end_date: 2015-11-06
+  img: projects/documentation.png
+  spent: 0
+  health: ok
+  status: rejected
+  approvals:
+    - staff: admin
+      approved: false
+      reason: Data not delivered on time.
+  answers:
+    - question: critical
+      value: 'Yes'
+    - question: cc
+      value: GSM-4873849128497761
+    - question: deployment
+      value: Private
