@@ -1,0 +1,22 @@
+---
+- _assoc: compute
+  text: Do you require a server instance?
+  answers:
+    - text: 'Yes'
+      tags_to_add: [compute]
+    - text: 'No'
+      tags_to_remove: []
+- _assoc: database
+  text: Do you require a database instance?
+  answers:
+    - text: 'Yes'
+      tags_to_add: [database]
+    - text: 'No'
+      tags_to_remove: []
+- _assoc: compute
+  text: Do you require staff?
+  answers:
+    - text: 'Yes'
+      tags_to_add: [staff]
+    - text: 'No'
+      tags_to_remove: []

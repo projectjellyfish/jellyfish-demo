@@ -1,12 +1,11 @@
-gnore spec database.
+# Ignore spec database.
 spec/dummy/db
 
 # Ignore log and tmp files.
-spec/test_app/log
+log
 tmp
 spec/dummy/log
 spec/dummy/tmp
-coverage
 
 
 # Ignore RubyMine files

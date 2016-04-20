@@ -1,0 +1,2 @@
+class DemoPolicy < ApplicationPolicy
+end

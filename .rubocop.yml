@@ -1,8 +1,11 @@
 AllCops:
   Exclude:
+    - config/unicorn.rb
+    - db/**/*
+    - vendor/**/*
     - bin/**
-    - lib/jellyfish-demo.rb
-  RunRailsCops: true
+    - lib/tasks/sample.rake
+    - lib/jellyfish_fog_aws/spec/dummy/**/*
 
 ClassLength:
   Max: 300
@@ -25,9 +28,6 @@ Style/GlobalVars:
 Style/IfUnlessModifier:
   Enabled: false
 
-Rails/HasAndBelongsToMany:
-  Enabled: false
-
 GuardClause:
   Enabled: false
 
@@ -40,5 +40,5 @@ Style/ClosingParenthesisIndentation:
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 
-Rails/Delegate:
+Style/FileName:
   Enabled: false

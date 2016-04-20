@@ -1,0 +1,67 @@
+---
+- _assoc: mobile
+  name: Mobile API
+  description: Demo Mobile API and Services
+  budget: 10000.0
+  monthly_budget: 1000.0
+  start_date: 2016-01-01
+  end_date: 2016-06-06
+  img: projects/icon-mobile-orange.png
+  spent: 4000.0
+  health: ok
+  status: approved
+  alerts:
+    - status: warning
+      message: Project audit scheduled in 7 days.
+      category: Compliance
+  approvals:
+    - staff: admin
+      approved: true
+      reason:
+  answers:
+    - question: critical
+      value: 'Yes'
+    - question: deployment
+      value: Hybrid
+    - question: cc
+      value: GSM-4873849128497761
+- _assoc: wiki
+  name: Internal Wiki
+  description: Demo Wiki and Services
+  budget: 3000.0
+  monthly_budget: 200.0
+  start_date: 2015-02-06
+  end_date: 2015-11-06
+  img: projects/documentation.png
+  spent: 0
+  health: ok
+  status: rejected
+  approvals:
+    - staff: admin
+      approved: false
+      reason: Budget rescinded.
+  answers:
+    - question: critical
+      value: 'Yes'
+    - question: cc
+      value: GSM-4873849128497761
+    - question: deployment
+      value: Private
+- _assoc: cloud
+  name: Cloud Prototype
+  description: Cloud Prototype and Services
+  budget: 50000.0
+  monthly_budget: 2000.0
+  start_date: 2015-02-06
+  end_date: 2015-11-06
+  img: projects/cloud-checkmark-128.png
+  spent: 0
+  health: ok
+  status: undecided
+  answers:
+    - question: critical
+      value: 'No'
+    - question: cc
+      value: GSM-4873849128497761
+    - question: deployment
+      value: Private
