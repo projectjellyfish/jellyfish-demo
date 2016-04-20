@@ -1,0 +1,26 @@
+---
+- _assoc: critical
+  question: Business Critical?
+  required: true
+  options: []
+  field_type: 0
+- _assoc: deployment
+  question: Project Type
+  required: true
+  options: ["Public", "Private", "Hybrid"]
+  field_type: 1
+- _assoc: cc
+  question: Charge Code
+  required: true
+  options: []
+  field_type: 2
+#- _assoc: maint
+#  question: Maintenance Day
+#  required: true
+#  options: []
+#  field_type: 3
+#- _assoc: do_maint
+#  question: Performed Maintenance
+#  required: false
+#  options: []
+#  field_type: 4

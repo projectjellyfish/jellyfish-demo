@@ -1,0 +1,19 @@
+---
+- _assoc: admin
+  first_name: Admin
+  last_name: User
+  email: admin@projectjellyfish.org
+  password: jellyfish
+  role: admin
+- _assoc: manager
+  first_name: Manager
+  last_name: User
+  email: manager@projectjellyfish.org
+  password: jellyfish
+  role: manager
+- _assoc: user
+  first_name: Normal
+  last_name: User
+  email: user@projectjellyfish.org
+  password: jellyfish
+  role: user
