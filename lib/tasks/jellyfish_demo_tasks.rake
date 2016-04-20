@@ -119,7 +119,8 @@ namespace :setup do
         project: order_project,
         setup_price: @setup_price,
         hourly_price: @hourly_price,
-        monthly_price: @monthly_price
+        monthly_price: @monthly_price,
+        status: Order.statuses['completed']
       }
       order = Order.create(order_params)
       # Save created Services with Order ID
