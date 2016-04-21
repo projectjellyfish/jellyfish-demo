@@ -7,7 +7,7 @@
   /** @ngInject */
   function appRun(StateOverride) {
     StateOverride.override('services.details', function(service) {
-      if ('JellyfishDemo::Service::S3' == service.type) {
+      if ('JellyfishDemo::Service::Server' == service.type) {
         return {
           templateUrl: 'extensions/demo/states/services/details/demo/server/server.html',
           controller: StateController
@@ -34,12 +34,10 @@
     }
 
     function handleResponse(response) {
-      console.log(response);
       vm.response = response;
     }
 
     function handleError(response) {
-      console.log(response);
       vm.response = response;
     }
 
