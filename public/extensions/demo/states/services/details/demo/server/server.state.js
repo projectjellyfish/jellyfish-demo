@@ -34,12 +34,10 @@
     }
 
     function handleResponse(response) {
-      console.log(response);
       vm.response = response;
     }
 
     function handleError(response) {
-      console.log(response);
       vm.response = response;
     }
 
