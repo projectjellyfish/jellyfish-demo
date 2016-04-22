@@ -6,7 +6,7 @@ module JellyfishDemo
 
         transaction do
           [
-            set('Demo Widget', '95244eb2-3286-43ec-915b-e8aedfd23bd2', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
+              set('Demo Widget', '95244eb2-3286-43ec-915b-e8aedfd23bd2', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
           ].each do |s|
             create! s.merge!(type: 'JellyfishDemo::ProductType::Widget')
           end
@@ -23,17 +23,11 @@ module JellyfishDemo
 
       def product_questions
         [
-          { name: :environment, value_type: :string, field: :environments, required: true }
         ]
       end
 
-      def order_questions
-        [
-        ]
-      end
-
-      def service_class
-        'JellyfishDemo::Service::Widget'.constantize
+      def product_class
+        'JellyfishDemo::Product::Widget'.constantize
       end
     end
   end
