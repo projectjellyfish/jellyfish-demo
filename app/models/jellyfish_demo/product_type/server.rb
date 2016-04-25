@@ -31,13 +31,8 @@ module JellyfishDemo
         ]
       end
 
-      def order_questions
-        [
-        ]
-      end
-
-      def service_class
-        'JellyfishDemo::Service::Server'.constantize
+      def product_class
+        'JellyfishDemo::Product::Server'.constantize
       end
     end
   end
