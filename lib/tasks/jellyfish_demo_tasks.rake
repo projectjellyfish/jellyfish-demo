@@ -55,7 +55,7 @@ namespace :setup do
       provider = providers.assoc(data.delete 'provider').last
       data.merge! product_type: product_type, provider: provider
       puts "  #{data['name']}"
-      [data.delete('_assoc'), Product.create(data).tap do |product|
+      [data.delete('_assoc'), data[:product_type].product_class.create(data).tap do |product|
         product.answers.create(answers) unless answers.nil?
       end]
     end
