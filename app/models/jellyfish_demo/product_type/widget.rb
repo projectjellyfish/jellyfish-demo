@@ -6,7 +6,7 @@ module JellyfishDemo
 
         transaction do
           [
-              set('Demo Widget', '95244eb2-3286-43ec-915b-e8aedfd23bd2', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
+            set('Demo Widget', '95244eb2-3286-43ec-915b-e8aedfd23bd2', provider_type: 'JellyfishDemo::Provider::Demo', active: 'false')
           ].each do |s|
             create! s.merge!(type: 'JellyfishDemo::ProductType::Widget')
           end
