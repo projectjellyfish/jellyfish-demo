@@ -11,6 +11,22 @@
   name: Database
   description: Databases
   tag_list: [database]
+- _assoc: application
+  name: Application
+  description: Applications
+  tag_list: [application]
+- _assoc: cluster
+  name: Cluster
+  description: Clusters
+  tag_list: [cluster]
+- _assoc: stack
+  name: Stack
+  description: Stacks
+  tag_list: [stack]
+- _assoc: analysis
+  name: Analysis
+  description: Analyses
+  tag_list: [analysis]
 - _assoc: staff
   name: Staff
   description: Personnel and staffing

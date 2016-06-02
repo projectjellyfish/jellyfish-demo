@@ -32,7 +32,7 @@
       value_type: string
 - _assoc: rhel
   name: RHEL 7
-  description: A server running RHEL
+  description: An AWS server running RHEL
   img: products/redhat.png
   product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
   provider: demo
@@ -59,7 +59,7 @@
       value_type: string
 - _assoc: centos
   name: Centos 7
-  description: A server running CentOS
+  description: An AWS server running CentOS
   img: products/centos.png
   product_type: 11ca0e0e-617d-45f3-b10a-acf42d5e6ecc
   provider: demo
@@ -113,7 +113,7 @@
       value: Development
       value_type: string
 - _assoc: mssql
-  name: SQL Server
+  name: MS SQL Server
   description: A MS SQL Server Instance
   img: products/mssql.png
   product_type: 75b08da2-1f55-4b4e-84bc-b8c76a7d8f04
@@ -389,6 +389,36 @@
   product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
   active: true
+  setup_price: 0.99
+  monthly_price: 1.29
+  hourly_price: 0.01
+  tag_list: [server, azure, public, win, windows, large, production]
+  answers:
+    - name: operating_system
+      value: Windows Server 2012
+      value_type: string
+    - name: instance_size
+      value: A3\Large
+      value_type: string
+    - name: cpus
+      value: 4
+      value_type: integer
+    - name: memory
+      value: 7
+      value_type: integer
+    - name: disk_size
+      value: 200
+      value_type: integer
+    - name: time_to_deploy
+      value: 7 minutes
+      value_type: string
+- _assoc: azure_2012
+  name: Azure Server 2012
+  description: Azure Windows Server 2012 R2 Datacenter
+  img: products/windows.png
+  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
+  provider: demo
+  active: true
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
@@ -639,8 +669,8 @@
       value: 10 minutes
       value_type: string
 - _assoc: sqlserver_medium
-  name: Medium Sql Server
-  description: A medium development level instance of Sql Server
+  name: Medium MS SQL Server
+  description: A medium development level instance of MS SQL Server
   img: products/mssql.png
   product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
@@ -651,7 +681,7 @@
   tag_list: [database, azure, public, sqlserver, medium, development]
   answers:
     - name: database
-      value: SQL Server 2012
+      value: MS SQL Server 2012
       value_type: string
     - name: instance_size
       value: S1
@@ -660,8 +690,8 @@
       value: 4 minutes
       value_type: string
 - _assoc: sqlserver_large
-  name: Large Sql Server
-  description: A large production capable instance of Sql Server
+  name: Large MS SQL Server
+  description: A large production capable instance of MS SQL Server
   img: products/mssql.png
   product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
   provider: demo
@@ -672,7 +702,7 @@
   tag_list: [database, azure, public, sqlserver, large, production]
   answers:
     - name: database
-      value: SQL Server 2012
+      value: MS SQL Server 2012
       value_type: string
     - name: instance_size
       value: S3
@@ -767,7 +797,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, aws, public, app, stack, lamp, oss, php, mysql, development]
+  tag_list: [aws, public, app, stack, lamp, oss, php, mysql, development]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -803,7 +833,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, aws, public, app, stack, oss, rails, ruby, postgresql, development]
+  tag_list: [aws, public, app, stack, oss, rails, ruby, postgresql, development]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -842,7 +872,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, aws, public, app, stack, oss, mean, mongo, node, development]
+  tag_list: [aws, public, app, stack, oss, mean, mongo, node, development]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -871,43 +901,9 @@
     - name: time_to_deploy
       value: 5 minutes
       value_type: string
-#o	NEW ONE: NCI Stack: A server running Windows 2008, IIS, MS-SQL, Ant Hill Pro
-- _assoc: app_nci
-  name: NCI Stack
-  description: A server running Windows 2008, IIS, MS-SQL, Ant Hill Pro
-  img: products/windows.png
-  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
-  provider: demo
-  active: true
-  setup_price: 20.99
-  monthly_price: 1.29
-  hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, windows, iis, sqlserver, anthill, production]
-  answers:
-    - name: operating_system
-      value: Windows 2012
-      value_type: string
-    - name: cpus
-      value: 2
-      value_type: integer
-    - name: memory
-      value: 8
-      value_type: string
-    - name: web_server
-      value: IIS
-      value_type: string
-    - name: application
-      value: Any Hill Pro
-      value_type: string
-    - name: database
-      value: SQL Server
-      value_type: string
-    - name: time_to_deploy
-      value: 8 minutes
-      value_type: string
 # o	NEW ONE: NCI-2:  A server running CentOS, Drupal, MySQL,
 - _assoc: app_nci2
-  name: Drupal CMS Stack - Basic ACQUIA
+  name: Drupal CMS - Basic ACQUIA
   description: A server running CentOS, Drupal, MySQL and managed by Acquia.
   img: products/centos.png
   product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
@@ -916,7 +912,7 @@
   setup_price: 0.00
   monthly_price: 231.00
   hourly_price: 0.00
-  tag_list: [application , private , vmware , nci , stack , centos , drupal , mysql , production , ACQUIA , cms]
+  tag_list: [application , private , vmware , centos , drupal , mysql , production , ACQUIA , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -940,7 +936,7 @@
       value: 9 minutes
       value_type: string
 - _assoc: app_nci2_aws
-  name: Drupal CMS Stack - Basic AWS
+  name: Drupal CMS - Basic AWS
   description: An EC2 instance running CentOS, Drupal, MySQL
   img: products/centos.png
   product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
@@ -949,7 +945,7 @@
   setup_price: 0.00
   monthly_price: 0.00
   hourly_price: 0.24
-  tag_list: [application , public , aws , nci , stack , centos , drupal , mysql , production , cms]
+  tag_list: [application , public , aws , centos , drupal , mysql , production , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -976,7 +972,7 @@
       value: 12 minutes
       value_type: string
 - _assoc: app_drupal_cms_onsite
-  name: Drupal CMS Stack - Basic On-Site
+  name: Drupal CMS - Basic On-Site
   description: An onsite instance running CentOS, Drupal, MySQL
   img: products/centos.png
   product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
@@ -985,7 +981,7 @@
   setup_price: 0.00
   monthly_price: 0.00
   hourly_price: 0.00
-  tag_list: [application , public , aws , nci , stack , centos , drupal , mysql , production , cms]
+  tag_list: [application , public , aws , centos , drupal , mysql , production , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -1012,7 +1008,7 @@
       value: 2 weeks
       value_type: string
 - _assoc: app_nci2_aws_high
-  name: Drupal CMS Stack - High Availability AWS
+  name: Drupal CMS - High Availability AWS
   description: An EC2 instance running CentOS, Drupal, MySQL
   img: products/centos.png
   product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
@@ -1021,7 +1017,7 @@
   setup_price: 0.00
   monthly_price: 625.00
   hourly_price: 0.00
-  tag_list: [application , public , aws , nci , stack , centos , drupal , mysql , production , cms]
+  tag_list: [application , public , aws , centos , drupal , mysql , production , cms]
   answers:
     - name: operating_system
       value: CentOS
@@ -1061,7 +1057,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, oss, centos, elasticsearch, nutch, production]
+  tag_list: [private, vmware, stack, oss, centos, elasticsearch, nutch, production]
   answers:
     - name: operating_system
       value: CentOS
@@ -1095,7 +1091,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, oss, centos, r, python, mongodb, java, production]
+  tag_list: [private, vmware, stack, oss, centos, r, python, mongodb, java, production]
   answers:
     - name: operating_system
       value: CentOS
@@ -1128,7 +1124,7 @@
   setup_price: 20.99
   monthly_price: 1.29
   hourly_price: 0.90
-  tag_list: [application, public, aws, nci, stack, oss, centos, r, python, mongodb, java, production]
+  tag_list: [public, aws, stack, oss, centos, r, python, mongodb, java, production]
   answers:
     - name: operating_system
       value: CentOS
@@ -1153,43 +1149,6 @@
       value_type: string
     - name: time_to_deploy
       value: 8 minutes
-      value_type: string
-# o	NEW ONE: NBIA Server Stack 1:  A server running  CentOS 6.5, JBOSS 5.1, NBIA version 6.2, MySQL 5.1, Java 1.6.0 update 33
-- _assoc: app_nbia
-  name: NBIA Server Stack
-  description: A server running  CentOS 6.5, JBOSS 5.1, NBIA version 6.2, MySQL 5.1, Java 1.6.0 update 33
-  img: products/centos.png
-  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
-  provider: demo
-  active: true
-  setup_price: 20.99
-  monthly_price: 1.29
-  hourly_price: 0.90
-  tag_list: [application, private, vmware, nci, stack, oss, centos, jboss, nbia, mysql, java, production]
-  answers:
-    - name: operating_system
-      value: CentOS
-      value_type: string
-    - name: cpus
-      value: 2
-      value_type: integer
-    - name: memory
-      value: 8
-      value_type: string
-    - name: framework
-      value: JBoss
-      value_type: string
-    - name: java
-      value: Java 1.6.0 update 33
-      value_type: string
-    - name: application
-      value: NBIA 6.2
-      value_type: string
-    - name: database
-      value: MySQL 5.1
-      value_type: string
-    - name: time_to_deploy
-      value: 20 minutes
       value_type: string
 - _assoc: app_jira
   name: JIRA
@@ -1291,7 +1250,7 @@
   setup_price: 0.00
   monthly_price: 0.00
   hourly_price: 3.50
-  tag_list: [application, app, apache, web, oss]
+  tag_list: [app, apache, web, oss]
   answers:
     - name: operating_system
       value: Ubuntu 14.04
@@ -1421,17 +1380,6 @@
     - name: time_to_deploy
       value: 24 minutes
       value_type: string
-- _assoc: other_monte
-  name: Monte Carlo
-  description: Monte Carlo Simulation
-  img: products/algorithm.png
-  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
-  provider: demo
-  active: true
-  setup_price: 0.00
-  monthly_price: 0.00
-  hourly_price: 3.00
-  tag_list: [analysis, dataset, monte-carlo]
 - _assoc: other_genome
   name: Gemone Modeling
   description: 3D Genomic Modeling
@@ -1443,17 +1391,6 @@
   monthly_price: 95.00
   hourly_price: 0.00
   tag_list: [analysis, modeling, genome]
-- _assoc: other_neural
-  name: Neural Network
-  description: Neural Network Modeling
-  img: products/algorithm.png
-  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
-  provider: demo
-  active: true
-  setup_price: 0.00
-  monthly_price: 30.00
-  hourly_price: 0.00
-  tag_list: [analysis, modeling, brain, neural]
 - _assoc: other_satellite
   name: Satellite Data
   description: Satellite Data from Eastern Hemisphere
@@ -1465,17 +1402,6 @@
   monthly_price: 0.00
   hourly_price: 0.00
   tag_list: [analysis, dataset, satellite, mapping]
-- _assoc: other_air
-  name: Air Traffic Logs
-  description: Air Traffic Controller Logs
-  img: products/dataset.png
-  product_type: 95244eb2-3286-43ec-915b-e8aedfd23bd2
-  provider: demo
-  active: true
-  setup_price: 0.00
-  monthly_price: 0.00
-  hourly_price: 0.00
-  tag_list: [analysis, dataset, logging, processing]
 - _assoc: other_human
   name: Human Genome
   description: Sequenced Human Genome
@@ -1486,7 +1412,7 @@
   setup_price: 10.00
   monthly_price: 0.00
   hourly_price: 0.00
-  tag_list: [analysis, dataset, modeling, genome]
+  tag_list: [dataset, modeling, genome]
 - _assoc: other_ebola
   name: Ebola Genome
   description: Ebola Virus Genome
